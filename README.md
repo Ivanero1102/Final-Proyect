@@ -1,5 +1,5 @@
-# GenshinCalculator
-Es una app sin ue pretende ofrecer una calculadora de daño fiable para el genshin, junto con mucha más información, como armas, personajes, artefactos etc
+# TFG
+Es una pagina web que permite realizar donaciones a diversas ONGs mediante anuncios.
 
 # Nomenclatura
 Todas las variables serán nombradas mediante
