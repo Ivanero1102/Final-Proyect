@@ -4,6 +4,24 @@ include_once("/xampp/htdocs/Final-Proyect/DS/crud.php");
 
 class OperativaPunto {
       
+    //Habria que juntar las dos funciones en una sola, acutalmente esta asi para hacer pruebas
+    public function sacarPuntos($idUsuario)
+    {
+        $crud = new CRUD();
+        $crud->consultaPreparada("SELECT * FROM PUNTOS WHERE id_usuario = :id_usuario", array(':id_usuario' => $idUsuario));
+    }
+
+
+    public function creacion($idUsuario, $puntosActuales, $totalPuntos ,$puntosGastados)
+    {
+        $objetoPunto = new Punto();
+        $objetoPunto->__set('idUsuario',$idUsuario);
+        $objetoPunto->__set('puntosActuales', $puntosActuales);
+        $objetoPunto->__set('totalPuntos', $totalPuntos);
+        $objetoPunto->__set('puntosGastados', $puntosGastados);
+        return $objetoPunto;
+    }
+
     public function sumaPuntos($punto, $puntos) { // MIRANDO VIDEOS (+puntosActuales, +totalPuntos)
 
         // Actualización de los puntos en el objeto $punto
