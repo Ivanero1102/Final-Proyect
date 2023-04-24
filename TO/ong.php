@@ -2,6 +2,7 @@
 class Ong{
     private $idOng;
     private $nombreOng;
+    private $puntos;
 
     
     function __get($atributo){
