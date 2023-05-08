@@ -20,10 +20,11 @@
 
     <!-- Estilos internos -->
     <style>
+        /* Div 1 Seccion Carrusel  */
         .containerCarrusel {
             height: 45em;
             width: 100%;
-            background-color: teal;
+
 
         }
 
@@ -35,18 +36,44 @@
         .seccion {
             height: 10em;
             width: 100%;
-            background-color: red;
+
             display: flex;
 
         }
 
+        .frase-carrusel {
+            position: absolute;
+            top: 80%;
+            /* ajusta la posición vertical de la frase */
+            right: 50px;
+            /* ajusta la posición horizontal de la frase */
+            background-color: rgba(255, 255, 255, 0.5);
+            /* ajusta el color de fondo del div */
+            padding: 1em;
+            /* ajusta el padding del div */
+            border-radius: 1.5em;
+            color: black;
+        }
+
+        .quienes-carrusel {
+            position: absolute;
+            top: 40%;
+            left: 10%;
+            width: 40em;
+            font-weight: 500;
+            padding: 1em;
+            color: white;
+        }
+
+        /* Div 2 Seccion Ongs para colaborar ------------------------------------------------------*/
         .seccionColaborar {
             display: flex;
             flex-direction: column;
             justify-content: center;
             height: 35em;
             width: 100%;
-            background-color: green;
+        background-color: #8DBB9C;
+
 
         }
 
@@ -72,11 +99,16 @@
         }
 
         p {
+            font-size: 1.5em;
+            font-weight: lighter;
+        }
+
+        h2 {
             font-size: 3em;
             font-weight: lighter;
         }
 
-
+        /* Div 3 Seccion Instrucciones de uso  ------------------------------------------------------*/
         .seccionInstrucciones {
             display: flex;
             justify-content: center;
@@ -84,6 +116,8 @@
             height: 35em;
             width: 100%;
             text-align: center;
+            background-color: white;
+            color: black;
         }
 
         .carousel-button {
@@ -93,19 +127,31 @@
             width: 2em;
             height: 2em;
             border-radius: 30%;
-            background-color: #fff;
             border: none;
+        }
+
+        
+
+        /* Div 4 Seccion entidades colaboradoras ------------------------------------------------------*/
+        .seccionEntidad {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 35em;
+            width: 100%;
+            text-align: center;
+            background-color: #4A456A;
         }
     </style>
 </head>
 
-<body>
+<body class="bg-white">
 
 
     <!-- Contenido principal de la página -->
 
 
-    <main>
+    <main class="container-fluid bg-white ">
         <!---CARRUSEL--------------------------------------------------------------------------------------- -->
         <div class="containerCarrusel" id="carrusel">
             <div class="row">
@@ -117,18 +163,32 @@
                         <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
                     <!-- Imagenes del carrusel -->
+
+                    <!-- Imagen 1 carrusel -->
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <p>"Solos podemos hacer muy poco, juntos podemos hacer mucho."</p>
-                            <img src="../Imagenes/manos.jpg" class="d-block w-100" alt="...">
-                            
-                        </div>
-                     
                         <div class="carousel-item ">
-                            <img src="../Imagenes/unidos.jpg" class="d-block w-100" alt="...">
+                            <div class="frase-carrusel">
+                                <p>"Ayudanto juntos, hacemos la diferencia"</p>
+                            </div>
+                            <img src="../Recursos/Imagenes/manos.jpg" class="d-block w-100" alt="...">
                         </div>
+                        <!-- Imagen 2 carrusel -->
+                        <div class="carousel-item active">
+                            <div class="quienes-carrusel">
+                                <h2> <strong>Quiénes somos</strong> </h2>
+                                <p>Somos una plataforma sin fines de lucro que busca fomentar la donación a las ONGs más reconocidas a nivel mundial, promoviendo la concienciación sobre su labor en la sociedad actual y generando una experiencia enriquecedora para el usuario.
+                                </p>
+                            </div>
+                            <img src="../Recursos/Imagenes/unidos.jpg" class="d-block w-100" alt="...">
+
+                        </div>
+                        <!-- Imagen 3 carrusel -->
                         <div class="carousel-item">
-                            <img src="../Imagenes/voluntarios.jpg" class="d-block w-100" alt="...">
+                        <div class="quienes-carrusel">
+                                <h2> <strong>Hazte socio</strong> </h2>
+                                <p>¡Juntos, cambiemos el mundo con un clic!</p>
+                            </div>
+                            <img src="../Recursos/Imagenes/voluntarios.jpg" class="d-block w-100" alt="...">
                         </div>
                     </div>
                     <!-- Botones del carrusel  -->
@@ -147,20 +207,20 @@
 
         <!-- Seccion colaborar ---------------------------------------------->
         <div class="seccionColaborar">
-            <p>Con quien puedes <strong>colaborar</strong> </p>
+            <h2>Con quien puedes <strong>colaborar</strong> </h2>
             <br>
             <div class="seccion2">
                 <div class="">
-                    <img src="../Imagenes/acnur.png " alt="Imagen 1">
+                    <img src="../Recursos/Imagenes/acnur.png " alt="Imagen 1">
                 </div>
                 <div class="">
-                    <img src="../Imagenes//unicef.png" alt="Imagen 2">
+                    <img src="../Recursos/Imagenes//unicef.png" alt="Imagen 2">
                 </div>
                 <div class="">
-                    <img src="../Imagenes/ayuda.jpeg" alt="Imagen 3">
+                    <img src="../Recursos/Imagenes/ayuda.jpeg" alt="Imagen 3">
                 </div>
                 <div class="">
-                    <img src="../Imagenes/greenpeace.jpeg" alt="Imagen 4">
+                    <img src="../Recursos/Imagenes/greenpeace.jpeg" alt="Imagen 4">
 
                 </div>
             </div>
@@ -168,23 +228,38 @@
 
         <!-- seccion ayuda  ---------------------------------------------->
         <div class="seccionInstrucciones">
-            <p>Como puedes <strong>colaborar</strong> </p>
+            <h2>Como puedes <strong>colaborar</strong> </h2>
             <br>
             <br>
             <div class="seccion2">
                 <div class="">
                     <p>Inscribete</p>
-                    <img src="../Imagenes/formulario.png" alt="Imagen 1">
+                    <img src="../Recursos/Imagenes/formulario.png" alt="Imagen 1">
                 </div>
                 <div class="">
-                <p>Mira publicidad</p>
-                    <img src="../Imagenes/video.png" alt="Imagen 2">
+                    <p>Mira publicidad</p>
+                    <img src="../Recursos/Imagenes/video.png" alt="Imagen 2">
                 </div>
                 <div class="">
-                <p>Ayuda</p>
-                    <img src="../Imagenes/colaborar.png" alt="Imagen 3">
+                    <p>Ayuda</p>
+                    <img src="../Recursos/Imagenes/colaborar.png" alt="Imagen 3">
                 </div>
             </div>
+        </div>
+
+
+        <!-- seccion ayuda  ---------------------------------------------->
+        <div class="seccionEntidad">
+            <h2>CONVIÉRTETE EN UNA ENTIDAD COLABORADORA</h2>
+            <br>
+            <br>
+            <p>Las entidades colaboradoras son empresas y organizaciones que están alineadas con nuestros proposito y quieren ayudar a escalar su impacto ayudándonos a expandirlos.</p>
+            <a href="wendyleon3327@gmail.com">Enviar correo</a>
+
+            <div>
+
+            </div>
+        </div>
         </div>
 
     </main>
