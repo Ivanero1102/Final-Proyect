@@ -1,20 +1,87 @@
+/**************************************** GENERAL ****************************************/
 body {
+    height: 100vh;
+}
+
+/*****************************************************************************************/
+
+/**************************************** HEADER ****************************************/
+nav {
+    background: linear-gradient(0deg, rgb(0 149 255) -85%, rgb(255, 255, 255) 15%);
+    height: 10%;
+}
+
+/* INTRODUCIR MEDIA QUERIES PARA EL ALTO DEL HEADER */
+
+#logo {
+    width: 10vw;
+}
+
+.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
+#inicio-sesion {
+    color: white;
+    background-color: #1ec076;
+}
+
+#inicio-sesion:hover,
+#registro:hover {
+    font-weight: bold;
+}
+
+#registro {
+    color: #1ec076;
+}
+
+/*****************************************************************************************/
+
+/**************************************** CONTENT ****************************************/
+#main {
+    height: 85%;
+    background-color: rgb(187 227 255);
+}
+
+#titulo {
+    font-size: 45px;
+    color: #1ec077;
+    font-family: "Arial Black", Gadget, sans-serif;
+    text-shadow: 0px 0px 0 rgb(25, 187, 114),
+        0px 1px 0 rgb(20, 182, 109),
+        0px 2px 0 rgb(15, 177, 104),
+        0px 3px 0 rgb(10, 172, 99),
+        0px 4px 0 rgb(5, 167, 94),
+        0px 5px 0 rgb(0, 162, 89),
+        0px 6px 0 rgb(-5, 157, 84),
+        0px 7px 0 rgb(-10, 152, 79),
+        0px 8px 0 rgb(-15, 147, 74),
+        0px 9px 0 rgb(-20, 142, 69),
+        0px 10px 0 rgb(-25, 137, 64),
+        0px 11px 10px rgba(0, 0, 0, 0.6),
+        0px 11px 1px rgba(0, 0, 0, 0.5),
+        0px 0px 10px rgba(0, 0, 0, .2);
+    margin: 0px;
+}
+
+
+iframe {
+    width: 80%;
+    height: 95%;
+}
+
+#video-container {
     height: 100%;
 }
 
-header {
-    height: 10%;
-}
+/*****************************************************************************************/
 
-main {
-    height: 80%;
-}
-
+/**************************************** FOOTER ****************************************/
 footer {
-    height: 10%;
+    background: linear-gradient(180deg, rgb(0 149 255) -80%, rgba(0, 212, 255, 0) 25%);
+    height: 5%;
 }
 
-video {
-    width: 50vw;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-}
+/*****************************************************************************************/
