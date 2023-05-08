@@ -1,6 +1,7 @@
 /**************************************** GENERAL ****************************************/
 body {
     height: 100vh;
+    /* color: black; */
 }
 
 /*****************************************************************************************/
@@ -42,7 +43,7 @@ nav {
 /**************************************** CONTENT ****************************************/
 #main {
     height: 85%;
-    background-color: rgb(187 227 255);
+    /* background-color: rgb(187 227 255); */
 }
 
 #titulo {
@@ -66,6 +67,26 @@ nav {
     margin: 0px;
 }
 
+#subtitulo {
+    font-size: 25px;
+    color: #1ec077;
+    font-family: "Arial Black", Gadget, sans-serif;
+    text-shadow: 0px 0px 0 rgb(25, 187, 114),
+        0px 1px 0 rgb(20, 182, 109),
+        0px 2px 0 rgb(15, 177, 104),
+        0px 3px 0 rgb(10, 172, 99),
+        0px 4px 0 rgb(5, 167, 94),
+        /* 0px 5px 0 rgb(0, 162, 89),
+        0px 6px 0 rgb(-5, 157, 84),
+        0px 7px 0 rgb(-10, 152, 79),
+        0px 8px 0 rgb(-15, 147, 74), */
+        /* 0px 9px 0 rgb(-20, 142, 69),
+        0px 10px 0 rgb(-25, 137, 64), */
+        0px 5px 10px rgba(0, 0, 0, 0.6),
+        0px 5px 1px rgba(0, 0, 0, 0.5),
+        0px 0px 10px rgba(0, 0, 0, .2);
+    margin: 0px;
+}
 
 iframe {
     width: 80%;

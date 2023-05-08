@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="es" style="height:100vh">
+<html lang="es" >
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SocialHope</title>
-
+<!-- Carga los archivos CSS de Bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
     <!-- Enlace a Bootstrap y el tema de Bootswatch -->
     <link rel="stylesheet" href="https://bootswatch.com/5/superhero/bootstrap.min.css">
     <link rel="stylesheet" href="../CSS/index.css">
@@ -13,10 +14,10 @@
     <!-- Script para que funcione el carrusel -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <!-- Script para cambiar el icono de la pestana -->
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/star-fill.svg" style="color: green;">
-
 
     <!-- Estilos internos -->
     <style>
@@ -148,7 +149,7 @@
 
 <body class="bg-white">
 
-
+    <?php require 'header.html'; ?>
     <!-- Contenido principal de la página -->
 
 
@@ -265,12 +266,12 @@
     </main>
 
 
-
+    <?php require 'footer.html'; ?>
 
 
 </body>
-<script>
-
-</script>
+<!-- Carga los archivos JavaScript de Bootstrap (necesario para los componentes interactivos) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js"></script>
 
 </html>
