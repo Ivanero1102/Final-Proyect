@@ -20,7 +20,7 @@
 
     <!-- Estilos internos -->
     <style>
-        /* Div 1 Seccion Carrusel  */
+        /* Div 1 Seccion Carrusel  ------------------------------------------------------*/
         .containerCarrusel {
             height: 45em;
             width: 100%;
@@ -70,7 +70,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: 35em;
+            height: 40em; /*  alto del div 2 */
             width: 100%;
         background-color: #8DBB9C;
 
@@ -92,10 +92,11 @@
             height: 12em;
         }
 
+        /* Estilo de las imagenes  */
         .seccionColaborar img,
         .seccionInstrucciones img {
             max-width: 100%;
-            height: 25vh;
+            height: 22vh;
         }
 
         p {
@@ -113,7 +114,7 @@
             display: flex;
             justify-content: center;
             flex-direction: column;
-            height: 35em;
+            height: 40em; /*  alto del div 3 */
             width: 100%;
             text-align: center;
             background-color: white;
@@ -208,7 +209,7 @@
         <!-- Seccion colaborar ---------------------------------------------->
         <div class="seccionColaborar">
             <h2>Con quien puedes <strong>colaborar</strong> </h2>
-            <br>
+            <br><br><br>
             <div class="seccion2">
                 <div class="">
                     <img src="../Recursos/Imagenes/acnur.png " alt="Imagen 1">
@@ -229,8 +230,7 @@
         <!-- seccion ayuda  ---------------------------------------------->
         <div class="seccionInstrucciones">
             <h2>Como puedes <strong>colaborar</strong> </h2>
-            <br>
-            <br>
+            <br><br><br>
             <div class="seccion2">
                 <div class="">
                     <p>Inscribete</p>
@@ -254,7 +254,7 @@
             <br>
             <br>
             <p>Las entidades colaboradoras son empresas y organizaciones que están alineadas con nuestros proposito y quieren ayudar a escalar su impacto ayudándonos a expandirlos.</p>
-            <a href="wendyleon3327@gmail.com">Enviar correo</a>
+            <a href="ayudaOng@gmail.com">Enviar correo</a>
 
             <div>
 
