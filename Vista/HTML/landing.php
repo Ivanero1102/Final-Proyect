@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es" >
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SocialHope</title>
-<!-- Carga los archivos CSS de Bootstrap -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+    <!-- Carga los archivos CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
     <!-- Enlace a Bootstrap y el tema de Bootswatch -->
     <link rel="stylesheet" href="https://bootswatch.com/5/superhero/bootstrap.min.css">
     <link rel="stylesheet" href="../CSS/index.css">
@@ -23,40 +23,29 @@
     <style>
         /* Div 1 Seccion Carrusel  ------------------------------------------------------*/
         .containerCarrusel {
-            height: 45em;
+            height: 45em;/* Alto del contenedor del div 1  */
             width: 100%;
-
-
         }
 
         .carousel-item>img {
             height: 45em;
+            /* Alto de las imagenes del div 1  */
             width: 100%;
         }
 
-        .seccion {
-            height: 10em;
-            width: 100%;
-
-            display: flex;
-
-        }
-
-        .frase-carrusel {
+        .fraseCarruselImg1 {
+            /* Estilos de las frase de la imagenes 1 del carrusel  */
             position: absolute;
             top: 80%;
-            /* ajusta la posición vertical de la frase */
             right: 50px;
-            /* ajusta la posición horizontal de la frase */
             background-color: rgba(255, 255, 255, 0.5);
-            /* ajusta el color de fondo del div */
             padding: 1em;
-            /* ajusta el padding del div */
             border-radius: 1.5em;
             color: black;
         }
 
-        .quienes-carrusel {
+        .fraseCarruselImg2 {
+            /* Estilos de las frases de las imagenes 2 y 3 del carrusel */
             position: absolute;
             top: 40%;
             left: 10%;
@@ -71,29 +60,25 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: 40em; /*  alto del div 2 */
+            height: 40em; /* Alto del contenedor del div 2  */
             width: 100%;
-        background-color: #8DBB9C;
-
-
+            background-color: #8DBB9C;
         }
 
-        .seccion2 {
+
+        .seccion2 { /* Estilos del contenedor de las imagenes de la seccion 2 y 3 que equivalen a seccion ayuda y seccion colaborar */
             height: 10em;
             width: 100%;
-
             justify-content: space-evenly;
             align-items: center;
             display: flex;
-
         }
-
-        .seccion2 img:hover {
+        .seccion2 img:hover {/* Estilos del contenedor de las imagenes de la seccion 2 y 3 que equivalen a seccion ayuda y seccion colaborar */
             width: 12em;
             height: 12em;
         }
 
-        /* Estilo de las imagenes  */
+        /* Estilo de las imagenes seccion 2 y 3 que equivalen a seccion ayuda y seccion colaborar   */
         .seccionColaborar img,
         .seccionInstrucciones img {
             max-width: 100%;
@@ -115,7 +100,7 @@
             display: flex;
             justify-content: center;
             flex-direction: column;
-            height: 40em; /*  alto del div 3 */
+            height: 40em; /* Alto del contenedor del div 3  */
             width: 100%;
             text-align: center;
             background-color: white;
@@ -132,7 +117,6 @@
             border: none;
         }
 
-        
 
         /* Div 4 Seccion entidades colaboradoras ------------------------------------------------------*/
         .seccionEntidad {
@@ -169,14 +153,14 @@
                     <!-- Imagen 1 carrusel -->
                     <div class="carousel-inner">
                         <div class="carousel-item ">
-                            <div class="frase-carrusel">
+                            <div class="fraseCarruselImg1">
                                 <p>"Ayudanto juntos, hacemos la diferencia"</p>
                             </div>
                             <img src="../Recursos/Imagenes/manos.jpg" class="d-block w-100" alt="...">
                         </div>
                         <!-- Imagen 2 carrusel -->
                         <div class="carousel-item active">
-                            <div class="quienes-carrusel">
+                            <div class="fraseCarruselImg2">
                                 <h2> <strong>Quiénes somos</strong> </h2>
                                 <p>Somos una plataforma sin fines de lucro que busca fomentar la donación a las ONGs más reconocidas a nivel mundial, promoviendo la concienciación sobre su labor en la sociedad actual y generando una experiencia enriquecedora para el usuario.
                                 </p>
@@ -186,7 +170,7 @@
                         </div>
                         <!-- Imagen 3 carrusel -->
                         <div class="carousel-item">
-                        <div class="quienes-carrusel">
+                            <div class="fraseCarruselImg2">
                                 <h2> <strong>Hazte socio</strong> </h2>
                                 <p>¡Juntos, cambiemos el mundo con un clic!</p>
                             </div>
@@ -272,6 +256,6 @@
 </body>
 <!-- Carga los archivos JavaScript de Bootstrap (necesario para los componentes interactivos) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js"></script>
 
 </html>
