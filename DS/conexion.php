@@ -5,6 +5,11 @@ class Conexion{
     private $password = "";
     private $DB = "ayudaong";
     
+    /**
+     * Conecta a la BBDD
+     * 
+     * @return object $conn | Objeto de tipo PDO 
+     */
     function conexionBBDD(){
         try {
             $conn = new PDO("mysql:host=$this->servername;dbname=$this->DB", $this->username, $this->password);
