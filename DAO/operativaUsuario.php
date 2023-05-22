@@ -72,8 +72,8 @@ class OperativaUsuaio{
             
             // Atributos del usuario
             // $idUsuario = $usuario->__get('idUsuario');
-            $correoUsuario     = $usuario->__get('correo_usuario');
-            $contrasenaUsuario = $usuario->__get('contrasena_usuario');
+            $correoUsuario     = $usuario->__get('correoUsuario');
+            $contrasenaUsuario = $usuario->__get('contrasenasuario');
 
             // Conexion bbdd 
             // $crud = new CRUD();

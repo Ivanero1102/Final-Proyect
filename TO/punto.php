@@ -13,7 +13,7 @@ class Punto{
      * 
      */
     function __get($atributo){
-        return $this->$atributo;
+        return $this->atributo;
     }
 
     /**
