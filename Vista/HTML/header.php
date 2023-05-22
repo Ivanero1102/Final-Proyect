@@ -41,8 +41,8 @@
         <li class="nav-item">
           <!-- Botón Acceder si no está logeado -->
           <?php
-            if (!isset($_SESSION['usuario'])) echo '<button id="boton-acceder" class="nav-link text-nowrap text-white">Acceder</button>'
-            else echo '<button id="boton-cerrar-sesion" class="nav-link text-nowrap text-white">Cerrar Sesión</button>'
+            if (!isset($_SESSION['usuario'])) echo '<button id="boton-acceder" class="nav-link text-nowrap text-white">Acceder</button>';
+            else echo '<button id="boton-cerrar-sesion" class="nav-link text-nowrap text-white">Cerrar Sesión</button>';
           ?>
           
         </li>
