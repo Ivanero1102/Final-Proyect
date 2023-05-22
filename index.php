@@ -1,26 +1,42 @@
 <?php
 $rutas = [
-    '/' => ['Página principal', 'prueba.html'],
-    '/mantenimiento' => ['Mantenimiento', 'prueba.html'],
-    '/privacidad' => ['Privacidad', 'prueba.html'],
+    '/Final-Proyect/' => ['Página principal', 'landingpage.php'],
+    '/Final-Proyect/resguardo' => ['Resguardo', 'resguardo.php'],
+    '/Final-Proyect/metadata' => ['Metadata', 'metadata.php'],
+    '/Final-Proyect/ongs' => ['Ong', 'ongs.php'],
+    '/Final-Proyect/video' => ['Video', 'video.php'],
 ];
 
 $request = $_SERVER['REQUEST_URI'];
+
 if($request[0] != '/') {
     $request = '/' . $request;
 }
+
 $partes = explode('?', $request);
 $request = $partes[0];
 
-print_r(__DIR__);
-print_r($rutas);
-// Verificar si hay página o no
-if(isset($rutas[$request])) {
-    // Incluir el PHP adecuado
-    include __DIR__ . './Vista/HTML/' . $rutas[$request][1];
-} else {
-    // La página no existe
-    http_response_code(404);
-    // include './Vista/HTML/prueba.html';
+error_reporting(0);
+switch ($rutas[$request][0]) {
+    case 'Página principal':
+        include './Vista/HTML/' . $rutas[$request][1];
+        break;
+    case 'Resguardo':
+        include './Vista/HTML/' . $rutas[$request][1];
+        break;
+    case 'Metadata':
+        include './Vista/HTML/' . $rutas[$request][1];
+        break;
+    case 'Ong':
+        include './Vista/HTML/' . $rutas[$request][1];
+        break;
+    case 'Video':
+        include './Vista/HTML/' . $rutas[$request][1];
+        break;
+    default:
+        echo "Hi";
+        http_response_code(404);
+        break;
 }
+
 ?>
