@@ -7,7 +7,14 @@
 </head>
 
 <body class="bg-white">
-    <?php require 'header.php'; ?>
+<?php 
+    try{
+        require './Vista/HTML/header.php'; 
+    } catch(Error $e){
+        header("Location: http://localhost/Final-Proyect/404");
+        exit();
+    }
+?>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">

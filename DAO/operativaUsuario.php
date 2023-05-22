@@ -96,9 +96,6 @@ class OperativaUsuaio{
             if ($resultado['contrasegna_usuario'] != null) {
 
                 //password_verify(string $password, string $hash)
-                echo $contrasenaUsuario;
-                echo "<br>";
-                echo $resultado['contrasegna_usuario'];
                 if (password_verify($contrasenaUsuario, $resultado['contrasegna_usuario'])) {
                     // session_start();
                     $_SESSION['usuario'] = $correoUsuario;

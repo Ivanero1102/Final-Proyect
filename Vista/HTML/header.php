@@ -45,7 +45,7 @@
             else {
               echo '
               <form action="" method="post">
-                <input type="submit" value="Cerrar Sesión" id="boton-cerrar-sesion" class="nav-link text-nowrap text-white">
+                <input type="submit" value="Cerrar Sesión" id="boton-cerrar-sesion" name="Logout" class="nav-link text-nowrap text-white">
               </form>';
             }
           ?>

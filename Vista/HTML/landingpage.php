@@ -6,7 +6,14 @@
     <link rel="stylesheet" href="./Vista/CSS/landingpage.css">
 </head>
 <body>
-    <?php require './Vista/HTML/header.php'; ?>
+<?php
+    try{
+        require './Vista/HTML/header.php'; 
+    } catch(Error $e){
+        header("Location: http://localhost/Final-Proyect/404");
+        exit();
+    }
+?>
 
     <!-- PRINCIPAL -->
     <div>
