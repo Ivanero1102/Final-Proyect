@@ -30,7 +30,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link text-white ml-5" href="/Final-Proyect/ongs">xxxx</a>
-            </li>'
+            </li>';
           }
         ?>
       </ul>
@@ -46,7 +46,7 @@
               <button id="boton-acceder" class="nav-link text-nowrap text-white">Acceder</button>
             </li>
           </ul>
-        </div>'
+        </div>';
       }
     ?>
     

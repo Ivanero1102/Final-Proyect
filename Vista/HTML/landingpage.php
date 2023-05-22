@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./Vista/CSS/landingpage.css">
 </head>
 <body>
-    <?php require './Vista/HTML/header.html'; ?>
+    <?php require './Vista/HTML/header.php'; ?>
 
     <!-- PRINCIPAL -->
     <div>

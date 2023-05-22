@@ -7,7 +7,7 @@
 </head>
 
 <body class="bg-white">
-    <?php require 'header.html'; ?>
+    <?php require 'header.php'; ?>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">

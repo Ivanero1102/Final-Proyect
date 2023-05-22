@@ -8,8 +8,11 @@ $punto = new OperativaPunto();
 $usuario = new OperativaUsuaio();
 
 
+print_r($_SESSION);
+
 if(isset($_POST['Login'])){
-    $usuarioObjeto = $usuario->sacarUSuairo($_POST['email']);
+    
+    $usuarioObjeto = $usuario->creacionLogin($_POST['email'], $_POST['contrasena']);
     $usuario->login($usuarioObjeto);
 }
 

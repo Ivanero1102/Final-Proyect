@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../CSS/video.css">
 </head>
 <body>
-    <?php require 'header.html'; ?>
+    <?php require 'header.php'; ?>
     <!-- Sección central con video -->
     <div class="container-fluid d-flex flex-column" id="main">
         <span id="titulo" class="text-center">GANA PUNTOS MIRANDO ESTE VIDEO</span>
