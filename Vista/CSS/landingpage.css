@@ -1,0 +1,313 @@
+/**************************************** BLOQUE 1 ****************************************/
+#bloque1 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 2px solid silver;
+    text-align: center;
+    padding: 5vh;
+}
+
+/* Título */
+#contenedor-textos span {
+    color: #60cbb5;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: 0px 2px 1px black;
+    white-space: nowrap;
+}
+
+/* Subtítulo */
+#contenedor-textos p{
+    font-weight: bold;
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: rgb(89 167 124 / 70%);
+    font-size: 18px;
+    margin: 0px;
+}
+  
+/******************************************************************************************/
+
+/**************************************** BLOQUE 2 ****************************************/
+#bloque2 {
+    background-color: #d9edf0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 2px solid silver;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+}
+
+/* Parte Izquierda */
+/* General */
+#titulo-descripcion{
+    width: 45vw;
+    text-align: justify;
+}
+
+/* Títulos */
+#titulo-descripcion h2 {
+    font-weight: bold;
+    text-align: center;
+    color: #1fc176;
+    text-shadow: 0px 1px 1px black;
+    font-size: 2.5vw;
+}
+
+/* Último párrafo izquierdo */
+#titulo-descripcion p:last-of-type {
+    margin: 0px;
+}
+
+/* Espaciado superior título central */
+#titulo-descripcion h2:nth-of-type(2) {
+    margin-top: 3vw;
+}
+
+/* Espaciado inferior texto central */
+#titulo-descripcion p:nth-of-type(2) {
+    margin-bottom: 3vw;
+}
+
+/* Parte Derecha */
+/* Imágen */
+#bloque2 img{
+    width: 30vw;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+    animation: wiggle 3s linear infinite;
+}
+
+/* Keyframes para la animación */
+@keyframes wiggle {
+    0%, 7% {
+        transform: rotateZ(0);
+    }
+    15% {
+        transform: rotateZ(-10deg);
+    }
+    20% {
+        transform: rotateZ(0deg);
+    }
+    25% {
+        transform: rotateZ(-5deg);
+    }
+    30% {
+        transform: rotateZ(3deg);
+    }
+    35% {
+        transform: rotateZ(-2deg);
+    }
+    40%, 100% {
+        transform: rotateZ(0);
+    }
+}
+/******************************************************************************************/
+
+/**************************************** BLOQUE 3 ****************************************/
+#bloque3 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 2px solid silver;
+}
+
+/* Título */
+#bloque3 h2 {
+    text-align: center;
+    font-weight: bold;
+    text-align: center;
+    font-size: 3vw;
+    color: #55c5b2;
+    padding-top: 2vw;
+    text-shadow: 0px 2px 1px black;
+}
+
+/* Primera fila imagenes */
+#contenedor-imagenes-superior {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Segunda fila imagenes */
+#contenedor-imagenes-inferior {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#bloque3 img{
+    cursor: pointer;
+    filter: grayscale(70%);
+    transition: .3s;
+}
+
+#bloque3 img:hover{
+    filter: grayscale(0%);
+}
+
+/* Clase que nos permite ajustar las imagenes */
+.normalizado {
+    height: 20vh;
+    width: 20vw;
+    object-fit: contain;
+}
+
+/******************************************************************************************/
+
+/**************************************** BLOQUE 4 ****************************************/
+#bloque4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #d9edf0;
+}
+
+/* Título */
+#bloque4 h2 {
+    padding-top: 2vw;
+    padding-bottom: 0.5vw;
+    font-weight: bold;
+    font-size: 3vw;
+    color: #55c5b2;
+    text-shadow: 0px 2px 1px black;
+    text-align: center;
+}
+
+#bloque4 p {
+    width: 60vw;
+    text-align: center;
+}
+
+/* Botón */
+#bloque4 button {
+    background-color: #1fc176;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 2vw;
+}
+
+#bloque4 button:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+/******************************************************************************************/
+
+/**************************************** MEDIA QUERIES ****************************************/
+/* Pantallas extra grandes / TV */
+@media (min-width: 1201px){
+
+}
+
+/* Ordenadores de escritorio / Pantallas grandes */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    #bloque2 {
+        height: 42vw;
+    }
+    .normalizado {
+        height: 15vh;
+    }
+}
+
+/* Pantallas pequeñas / Portátiles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    #bloque2 {
+        height: 59vw;
+    }
+    .normalizado {
+        height: 15vh;
+    }
+}
+
+/* iPads / Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    #contenedor-textos span {
+        font-size: 40px;
+        white-space: normal;
+    }
+    #contenedor-textos p {
+        display: none;
+    }
+    #titulo-descripcion {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+    #bloque2 {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    #bloque2 img {
+        padding-top: 5vw;
+        padding-bottom: 2vw;
+    }
+    #titulo-descripcion h2 {
+        font-size: 5vw;
+    }
+    .normalizado {
+        height: 11vh;
+    }
+    #bloque3 h2 {
+        font-size: 5vw;
+    }
+    #bloque4 h2 {
+        font-size: 5vw;   
+    }
+    #bloque4 p {
+        padding-top: 1.5vw;
+        padding-bottom: 1.5vw;
+        width: 90vw;
+    }
+}
+
+/* Dispositivos móviles */
+@media (min-width: 320px) and (max-width: 480px) {
+    #contenedor-textos span {
+        font-size: 40px;
+        white-space: normal;
+    }
+    #contenedor-textos p {
+        display: none;
+    }
+    #titulo-descripcion {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+    #titulo-descripcion h2:last-of-type{
+        margin-top: 3vw;
+    }
+    #bloque2 {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    #titulo-descripcion p:nth-of-type(2){
+        margin-bottom: 1rem;
+    }
+    #bloque2 img {
+        padding-top: 5vw;
+        padding-bottom: 2vw;
+        width: 40vw;
+    }
+    #titulo-descripcion h2 {
+        font-size: 7vw;
+    }
+    .normalizado {
+        height: 7vh;
+    }
+    #bloque3 h2 {
+        font-size: 7vw;
+    }
+    #bloque4 h2 {
+        font-size: 7vw;   
+    }
+    #bloque4 p {
+        padding-top: 1.5vw;
+        padding-bottom: 1.5vw;
+        width: 90vw;
+    }
+}
+/***********************************************************************************************/

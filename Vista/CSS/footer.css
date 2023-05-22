@@ -1,0 +1,42 @@
+/***************************************** FOOTER *****************************************/
+footer {
+    border-top: 2px solid #1fc176;
+}
+
+/* Fondos */
+footer i{
+    width: 2vw;
+}
+
+@media (max-width: 540px) {
+    footer i{
+        width: 2.5vw;
+    }
+}
+
+@media (max-width: 320px) {
+    footer i{
+        width: 4vw;
+    }
+}
+
+#facebook {
+    background-color: #3b5998;
+}
+
+#twitter {
+    background-color: #55acee;
+}
+
+#google {
+    background-color: #dd4b39;
+}
+
+#instagram {
+    background-color: #ac2bac;
+}
+
+footer a:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+/******************************************************************************************/
