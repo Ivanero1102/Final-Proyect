@@ -3,10 +3,10 @@
 <head>
     <?php require 'metadata.php'; ?>
     <!-- Únicamente estilos propios -->
-    <link rel="stylesheet" href="../CSS/landingpage.css">
+    <link rel="stylesheet" href="./Vista/CSS/landingpage.css">
 </head>
 <body>
-    <?php require 'header.html'; ?>
+    <?php require './Vista/HTML/header.html'; ?>
 
     <!-- PRINCIPAL -->
     <div>
@@ -39,21 +39,21 @@
                     usuario que quieran colaborar con el desarrollo y mantenimiento de la web. 
                 </p>
             </div>
-            <div><img src="../Recursos/Imagenes/Claqueta.jpg" alt="Video-Logo"></div>
+            <div><img src="./Vista/Recursos/Imagenes/Claqueta.jpg" alt="Video-Logo"></div>
         </div>
 
         <div id="bloque3">
             <h2>COLABORADORES</h2>
             <div id="contenedor-imagenes-superior">
-                <img class="normalizado" src="../Recursos/Imagenes/acnur2.png" alt="Logo-Acnur">
-                <img class="normalizado" src="../Recursos/Imagenes/ayuda.png" alt="Logo-AyudaEnAccion">
-                <img class="normalizado" src="../Recursos/Imagenes/greenpeace.jpeg" alt="Logo-Greenpeace">
-                <img class="normalizado" src="../Recursos/Imagenes/accion-solidaria.jpg" alt="Logo-AccionSolidaria">
+                <img class="normalizado" src="./Vista/Recursos/Imagenes/acnur2.png" alt="Logo-Acnur">
+                <img class="normalizado" src="./Vista/Recursos/Imagenes/ayuda.png" alt="Logo-AyudaEnAccion">
+                <img class="normalizado" src="./Vista/Recursos/Imagenes/greenpeace.jpeg" alt="Logo-Greenpeace">
+                <img class="normalizado" src="./Vista/Recursos/Imagenes/accion-solidaria.jpg" alt="Logo-AccionSolidaria">
             </div>
             <div id="contenedor-imagenes-inferior">
-                <img class="normalizado" src="../Recursos/Imagenes/medicos.png" alt="Logo-MedicosSinFronteras">
-                <img class="normalizado" src="../Recursos/Imagenes/cear.jpg" alt="Logo-Cear">
-                <img class="normalizado" src="../Recursos/Imagenes/unicef.jpg" alt="Logo-Unicef">
+                <img class="normalizado" src="./Vista/Recursos/Imagenes/medicos.png" alt="Logo-MedicosSinFronteras">
+                <img class="normalizado" src="./Vista/Recursos/Imagenes/cear.jpg" alt="Logo-Cear">
+                <img class="normalizado" src="./Vista/Recursos/Imagenes/unicef.jpg" alt="Logo-Unicef">
             </div>
         </div>
 

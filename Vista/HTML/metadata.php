@@ -9,13 +9,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-">
 <!-- Script para cambiar el icono de la pestana -->
-<link rel="icon" type="image/png" href="../Recursos/Logo3.png">
+<link rel="icon" type="image/png" href="./Vista/Recursos/Logo3.png">
 <!-- Fuentes -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@800&display=swap" rel="stylesheet">
 <!-- Estilos CSS -->
-<link rel="stylesheet" href="../CSS/header.css">
-<link rel="stylesheet" href="../CSS/footer.css">
-<link rel="stylesheet" href="../CSS/popup.css">
-<script src="../JS/popup.js" defer></script>
+<link rel="stylesheet" href="./Vista/CSS/header.css">
+<link rel="stylesheet" href="./Vista/CSS/footer.css">
+<link rel="stylesheet" href="./Vista/CSS/popup.css">
+<script src="./Vista/JS/popup.js" defer></script>

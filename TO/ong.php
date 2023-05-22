@@ -1,9 +1,10 @@
 <?php
 class Ong{
-    private $idOng;
-    private $nombreOng;
-    private $puntos;
-
+    public $idOng;
+    public $nombreOng;
+    public $puntos;
+    public $descripcion;
+    public $img;
     /**
      * Sacar los atributos de un objeto de tipo Ong
      * 
@@ -12,7 +13,7 @@ class Ong{
      * 
      */
     function __get($atributo){
-        return $this->atributo;
+        return $this->$atributo;
     }
     
     /**
@@ -23,7 +24,7 @@ class Ong{
      * 
      */
     function __set($atributo, $valor){
-        $this->atributo = $valor;
+        $this->$atributo = $valor;
     }
 
 }

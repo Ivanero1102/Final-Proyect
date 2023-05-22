@@ -1,9 +1,9 @@
 <?php
 class Punto{
-    private $idUsuaio;
-    private $puntosActuales;
-    private $totalPuntos;
-    private $puntosGastados;
+    public $idUsuaio;
+    public $puntosActuales;
+    public $totalPuntos;
+    public $puntosGastados;
 
     /**
      * Sacar los atributos de un objeto de tipo Punto
@@ -13,7 +13,7 @@ class Punto{
      * 
      */
     function __get($atributo){
-        return $this->atributo;
+        return $this->$atributo;
     }
 
     /**
@@ -24,7 +24,7 @@ class Punto{
      * 
      */
     function __set($atributo, $valor){
-        $this->atributo = $valor;
+        $this->$atributo = $valor;
     }
 
 }

@@ -1,11 +1,11 @@
 <?php
 class Usuario{
-    private $idUsuario;
-    private $nombreUsuario;
-    private $apellidosUsuario;
-    private $edadUsuario;
-    private $telefonoUsuario;
-    private $contrasenaUsuario;
+    public $idUsuario;
+    public $nombreUsuario;
+    public $apellidosUsuario;
+    public $edadUsuario;
+    public $correoUsuario;
+    public $contrasenaUsuario;
 
     /**
      * Sacar los atributos de un objeto de tipo Usurio
@@ -15,7 +15,7 @@ class Usuario{
      * 
      */
     function __get($atributo){
-        return $this->atributo;
+        return $this->$atributo;
     }
 
     /**
@@ -26,7 +26,7 @@ class Usuario{
      * 
      */
     function __set($atributo, $valor){
-        $this->atributo = $valor;
+        $this->$atributo = $valor;
     }
 
 }

@@ -3,7 +3,7 @@ class Conexion{
     private $servername = "localhost";
     private $username = "root";
     private $password = "";
-    private $DB = "ayudaong";
+    private $DB = "socialhope";
     
     /**
      * Conecta a la BBDD
