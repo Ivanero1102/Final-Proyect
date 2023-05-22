@@ -20,23 +20,37 @@
         <li class="nav-item">
           <a class="nav-link text-white ml-5" href="/Final-Proyect/">Inicio</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-white ml-5" href="/Final-Proyect/video">Obtener Puntos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white ml-5" href="/Final-Proyect/ongs">xxxx</a>
-        </li>
+
+        <!-- Si está logueado, mostramos los links -->
+        <?php 
+          if (isset($_SESSION['usuario'])) {
+            echo '
+            <li class="nav-item">
+              <a class="nav-link text-white ml-5" href="/Final-Proyect/video">Obtener Puntos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white ml-5" href="/Final-Proyect/ongs">xxxx</a>
+            </li>'
+          }
+        ?>
       </ul>
     </div>
 
-    <!-- Botón Acceder -->
-    <div class="d-flex align-items-center">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <button id="boton-acceder" class="nav-link text-nowrap text-white">Acceder</button>
-        </li>
-      </ul>
-    </div>
+    <?php 
+      // Botón Acceder si no está logeado
+      if (!isset($_SESSION['usuario'])) {
+        echo '
+        <div class="d-flex align-items-center">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <button id="boton-acceder" class="nav-link text-nowrap text-white">Acceder</button>
+            </li>
+          </ul>
+        </div>'
+      }
+    ?>
+    
+    
 
     <!-- POPUP -->
     <div id="popup" class="popup">
