@@ -35,20 +35,19 @@
         ?>
       </ul>
     </div>
-
-    <?php 
-      // Botón Acceder si no está logeado
-      if (!isset($_SESSION['usuario'])) {
-        echo '
-        <div class="d-flex align-items-center">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <button id="boton-acceder" class="nav-link text-nowrap text-white">Acceder</button>
-            </li>
-          </ul>
-        </div>';
-      }
-    ?>
+    
+    <div class="d-flex align-items-center">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <!-- Botón Acceder si no está logeado -->
+          <?php
+            if (!isset($_SESSION['usuario'])) echo '<button id="boton-acceder" class="nav-link text-nowrap text-white">Acceder</button>'
+            else echo '<button id="boton-cerrar-sesion" class="nav-link text-nowrap text-white">Cerrar Sesión</button>'
+          ?>
+          
+        </li>
+      </ul>
+    </div>
     
     
 
