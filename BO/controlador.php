@@ -11,7 +11,8 @@ $usuario = new OperativaUsuaio();
 if(isset($_POST['Login'])){
     print_r($_POST);
     $usuarioObjeto = $usuario->sacarUSuairo($_POST['email']);
-    $usuario->login($usuarioObjeto);
+    print_r($usuarioObjeto);
+    // $usuario->login($usuarioObjeto);
 }
 
 if(isset($_POST['Registro'])){

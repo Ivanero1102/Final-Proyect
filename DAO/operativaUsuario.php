@@ -8,7 +8,7 @@ class OperativaUsuaio{
     public function sacarUSuairo($correoUsuario)
     {
         $crud = new CRUD();
-        $crud->consultaPreparada("SELECT * FROM USUARIOS WHERE correo_usuario = :correo_usuario", array(':correo_usuario' => $correoUsuario));
+        return $crud->consultaPreparada("SELECT * FROM USUARIOS WHERE correo_usuario = :correo_usuario", array(':correo_usuario' => $correoUsuario));
     }
 
     public function creacion($nombreUsuario, $apellidosUsuario, $edadUsuario, $correoUsuario, $contrasenaUsuario)
