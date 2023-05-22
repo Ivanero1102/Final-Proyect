@@ -42,7 +42,12 @@
           <!-- Botón Acceder si no está logeado -->
           <?php
             if (!isset($_SESSION['usuario'])) echo '<button id="boton-acceder" class="nav-link text-nowrap text-white">Acceder</button>';
-            else echo '<button id="boton-cerrar-sesion" class="nav-link text-nowrap text-white">Cerrar Sesión</button>';
+            else {
+              echo '
+              <form action="" method="post">
+                <input type="submit" value="Cerrar Sesión" id="boton-cerrar-sesion" class="nav-link text-nowrap text-white">
+              </form>';
+            }
           ?>
           
         </li>
