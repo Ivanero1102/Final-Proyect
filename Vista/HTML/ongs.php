@@ -3,7 +3,7 @@
 <head>
     <?php require 'metadata.php'; ?>
     <!-- Únicamente estilos propios -->
-    <link rel="stylesheet" href="../CSS/ongs.css">
+    <link rel="stylesheet" href="./vista//CSS/ongs.css">
 </head>
 
 <body class="bg-white">

@@ -22,18 +22,18 @@
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     border-radius: 1vw;
-    width: 55%;
+    width: 90%;
 }
 
 .cerrar {
     color: #aaa;
     float: right;
-    font-size: 2vw;
+    font-size: 3vw;
     font-weight: bold;
     cursor: pointer;
     line-height: 1vw;
     margin-top: 0.5vw;
-    margin-right: 0.5vw;
+    margin-right: 0.2vw;
 }
 
 .cerrar:hover {
@@ -54,6 +54,7 @@
 }
 
 #contenedor-login-registro h2{
+    font-size: 3vw;
     font-weight: bold;
     white-space: nowrap;
     padding: 1vw;
@@ -65,7 +66,7 @@
 #contenedor-login-registro input {
     border: 1px solid silver;
     border-radius: 0.5vw;
-    width: 20vw;
+    width: 100%;
     margin-bottom: 0.5vw;
     font-style: italic;
     color: #60cbb5;
@@ -87,3 +88,79 @@
     outline: none;
     border: 2px solid #1fc176;
 }
+
+#contenedor-login, #contenedor-registro {
+    width: 40%;
+}
+
+#separador-login-registro {
+    height: 30vw;
+    background: radial-gradient(circle, rgba(31,193,118,1) 0%, rgba(96,203,181,1) 100%);
+    padding: 0.2vw;
+}
+
+/**************************************** MEDIA QUERIES ****************************************/
+/* Pantallas extra grandes / TV */
+@media (min-width: 1201px){
+
+}
+
+/* Ordenadores de escritorio / Pantallas grandes */
+@media (min-width: 1025px) and (max-width: 1200px) {
+
+}
+
+/* Pantallas pequeñas / Portátiles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    #separador-login-registro {
+        height: 38vw;
+    }
+}
+
+/* iPads / Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    #contenedor-login-registro {
+        flex-direction: column;
+    }
+    #contenedor-login, #contenedor-registro {
+        width: 80%;
+    }
+    #contenedor-login-registro h2 {
+        font-size: 5vw;
+    }
+    #separador-login-registro {
+        width: 55vw;
+        height: 0.8vw;
+        margin-top: 5vw;
+        margin-bottom: 5vw;
+    }
+    .cerrar {
+        font-size: 6vw;
+        margin-top: 0.8vw;
+        margin-right: 0.5vw;
+    }
+}
+
+/* Dispositivos móviles */
+@media (min-width: 320px) and (max-width: 480px) {
+    #contenedor-login-registro {
+        flex-direction: column;
+    }
+    #contenedor-login, #contenedor-registro {
+        width: 80%;
+    }
+    #contenedor-login-registro h2 {
+        font-size: 6vw;
+    }
+    #separador-login-registro {
+        width: 55vw;
+        height: 0.8vw;
+        margin-top: 5vw;
+        margin-bottom: 5vw;
+    }
+    .cerrar {
+        margin-top: 1.4vw;
+        font-size: 7vw;
+    }
+}
+/***********************************************************************************************/

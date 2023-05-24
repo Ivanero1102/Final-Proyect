@@ -3,7 +3,7 @@
 <head>
     <?php require 'metadata.php'; ?>
     <!-- Únicamente estilos propios -->
-    <link rel="stylesheet" href="../CSS/video.css">
+    <link rel="stylesheet" href="./Vista/CSS/video.css">
 </head>
 <body>
 <?php
