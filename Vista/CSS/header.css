@@ -1,12 +1,11 @@
 /**************************************** HEADER ****************************************/
 nav {
-    /* background: linear-gradient(90deg, rgb(0, 0, 0) -7%, rgb(120, 221, 166) 105%); */
-    background: white;
+    background: linear-gradient(90deg, rgb(0, 0, 0) -7%, rgb(120, 221, 166) 105%);
     box-shadow: rgba(30, 192, 118, 0.4) 0px 30px 60px -30px, rgba(30, 192, 118, 0.45) 0px -2px 6px 0px inset;
 }
 
 .nav-link {
-    color: #60cbb5;
+    color: white;
 }
 
 .nav-link:hover {
@@ -30,10 +29,13 @@ nav {
 }
 
 #boton-acceder, #boton-cerrar-sesion {
-    border: 1px solid #60cbb5;
-    border-radius: 10px;
-    background-color: #1fc176;
+    background-color: transparent;
     color: white;
+    border-radius: 0.4vw;
+    text-decoration: none;
+    margin: 0px;
+    border: 2px solid transparent;
+    box-shadow: rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
 #boton-acceder:hover, #boton-cerrar-sesion:hover {
