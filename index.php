@@ -17,20 +17,33 @@ $partes = explode('?', $request);
 $request = $partes[0];
 
 error_reporting(0);
-switch ($rutas[$request][0]) {
-    case 'Página principal':
-        include './Vista/HTML/' . $rutas[$request][1];
-        break;
-    case 'Ong':
-        include './Vista/HTML/' . $rutas[$request][1];
-        break;
-    case 'Video':
-        include './Vista/HTML/' . $rutas[$request][1];
-        break;
-    default:
-        http_response_code(404);
-        include './Vista/HTML/404.php';
-        break;
+
+if (isset($_SESSION['usuario'])) {
+    switch ($rutas[$request][0]) {
+        case 'Página principal':
+            include './Vista/HTML/' . $rutas[$request][1];
+            break;
+        case 'Ong':
+            include './Vista/HTML/' . $rutas[$request][1];
+            break;
+        case 'Video':
+            include './Vista/HTML/' . $rutas[$request][1];
+            break;
+        default:
+            http_response_code(404);
+            include './Vista/HTML/404.php';
+            break;
+    }
+}else{
+    switch ($rutas[$request][0]) {
+        case 'Página principal':
+            include './Vista/HTML/' . $rutas[$request][1];
+            break;
+        default:
+            http_response_code(404);
+            include './Vista/HTML/404.php';
+            break;
+    }
 }
 
 ?>
