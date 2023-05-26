@@ -100,6 +100,15 @@ class OperativaUsuaio{
         , importante desencriptar la contraseña de la BBDD antes de comparar.
         En caso de que todo coincida, se creara una sesion llamada $_SESSION['usuario'] */
     /*La funcion no devuelve nada*/
+
+    /**
+     * Se encarga de introducir un usuario en la base de datos
+     * 
+     * @param object $usuario | Objeto de tipo usuario
+     * @return boolean false | Booleano en caso de que falle el registro
+     * @return boolean true | Booleano en caso de que se realice correctamente el registro
+     * 
+     */
     public function login($usuario)
     {
 
