@@ -2,3 +2,22 @@
     width: 100%;
     height: 91.5vh;
 }
+
+.carousel-indicators li {
+    background-color: #62d39f;
+}
+
+#contenedor-ong {
+    display: flex;
+    flex-direction: column;
+}
+
+#nombre-ong {
+    color: #60cbb5;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#descripcion-ong {
+
+}

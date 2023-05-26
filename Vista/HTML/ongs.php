@@ -23,8 +23,10 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active">
+            <div class="carousel-item active" id="contenedor-ong">
                 <img class="d-block w-100" src="https://picsum.photos/2000/2000" alt="Imagen 1">
+                <span id="nombre-ong">nombreOng</span><br>
+                <span id="descripcion-ong">descripcion</span>
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="https://picsum.photos/2000/2001" alt="Imagen 2">
