@@ -26,5 +26,42 @@ iframe {
     height: 100%;
     margin-bottom: 2vw;
 }
-
 /*****************************************************************************************/
+/**************************************** MEDIA QUERIES ****************************************/
+/* Pantallas extra grandes / TV */
+@media (min-width: 1201px){
+
+}
+
+/* Ordenadores de escritorio / Pantallas grandes */
+@media (min-width: 1025px) and (max-width: 1200px) {
+
+}
+
+/* Pantallas pequeñas / Portátiles */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+}
+
+/* iPads / Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    #titulo {
+        font-size: 8vw;
+    }
+
+    #main {
+        height: 75%;
+    }
+}
+
+/* Dispositivos móviles */
+@media (min-width: 320px) and (max-width: 480px) {
+    #titulo {
+        font-size: 8vw;
+    }
+
+    #main {
+        height: 70%;
+    }
+}
+/***********************************************************************************************/

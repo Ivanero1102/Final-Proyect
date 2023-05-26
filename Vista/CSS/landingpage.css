@@ -181,16 +181,23 @@
     text-align: center;
 }
 
-/* Botón */
-#bloque4 button {
+/* Enlace de contacto */
+#bloque4 #correo-automatico {
     background-color: #1fc176;
     color: white;
-    border-radius: 10px;
+    border-radius: 0.4vw;
     margin-bottom: 2vw;
+    text-decoration: none;
+    padding: 0.5vw;
 }
 
-#bloque4 button:hover {
+#bloque4 #correo-automatico:hover {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+#bloque4 #correo {
+    color: #1fc176;
+    font-weight: bold;
 }
 /******************************************************************************************/
 

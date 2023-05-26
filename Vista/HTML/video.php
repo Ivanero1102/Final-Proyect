@@ -3,10 +3,17 @@
 <head>
     <?php require 'metadata.php'; ?>
     <!-- Únicamente estilos propios -->
-    <link rel="stylesheet" href="../CSS/video.css">
+    <link rel="stylesheet" href="./Vista/CSS/video.css">
 </head>
 <body>
-    <?php require 'header.php'; ?>
+<?php
+    try{
+        require './Vista/HTML/header.php'; 
+    } catch(Error $e){
+        header("Location: http://localhost/Final-Proyect/404");
+        exit();
+    }
+?>
     <!-- Sección central con video -->
     <div class="container-fluid d-flex flex-column" id="main">
         <span id="titulo" class="text-center">GANA PUNTOS MIRANDO ESTE VIDEO</span>

@@ -1,7 +1,22 @@
 /**************************************** HEADER ****************************************/
 nav {
-    background: linear-gradient(90deg, rgb(0, 0, 0) -7%, rgb(120, 221, 166) 105%);
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    /* background: linear-gradient(90deg, rgb(0, 0, 0) -7%, rgb(120, 221, 166) 105%); */
+    background: white;
+    box-shadow: rgba(30, 192, 118, 0.4) 0px 30px 60px -30px, rgba(30, 192, 118, 0.45) 0px -2px 6px 0px inset;
+}
+
+.nav-link {
+    color: #60cbb5;
+}
+
+.nav-link:hover {
+    font-weight: bold;
+    color: #60cbb5;
+}
+
+#desplegable{
+    color: #1ec076;
+    border-color: #60cbb5;
 }
 
 #logo {
@@ -14,19 +29,20 @@ nav {
     }
 }
 
-#boton-acceder {
-    border: 1px solid white;
+#boton-acceder, #boton-cerrar-sesion {
+    border: 1px solid #60cbb5;
     border-radius: 10px;
-    background-color: transparent;
+    background-color: #1fc176;
+    color: white;
 }
 
-#boton-acceder:hover {
+#boton-acceder:hover, #boton-cerrar-sesion:hover {
     font-weight: bold;
-    border: 2px solid white;
+    border: 2px solid #60cbb5;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
-#boton-acceder:focus {
+#boton-acceder:focus, #boton-cerrar-sesion:focus {
     outline: none;
 }
 /******************************************************************************************/

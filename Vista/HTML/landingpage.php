@@ -6,7 +6,14 @@
     <link rel="stylesheet" href="./Vista/CSS/landingpage.css">
 </head>
 <body>
-    <?php require './Vista/HTML/header.php'; ?>
+<?php
+    try{
+        require './Vista/HTML/header.php'; 
+    } catch(Error $e){
+        header("Location: http://localhost/Final-Proyect/404");
+        exit();
+    }
+?>
 
     <!-- PRINCIPAL -->
     <div>
@@ -45,22 +52,39 @@
         <div id="bloque3">
             <h2>COLABORADORES</h2>
             <div id="contenedor-imagenes-superior">
-                <img class="normalizado" src="./Vista/Recursos/Imagenes/acnur2.png" alt="Logo-Acnur">
-                <img class="normalizado" src="./Vista/Recursos/Imagenes/ayuda.png" alt="Logo-AyudaEnAccion">
-                <img class="normalizado" src="./Vista/Recursos/Imagenes/greenpeace.jpeg" alt="Logo-Greenpeace">
-                <img class="normalizado" src="./Vista/Recursos/Imagenes/accion-solidaria.jpg" alt="Logo-AccionSolidaria">
+                <a href="https://eacnur.org/es" target="_blank">
+                    <img class="normalizado" src="./Vista/Recursos/Imagenes/acnur2.png" alt="Logo-Acnur">
+                </a>
+                <a href="https://ayudaenaccion.org/" target="_blank">
+                    <img class="normalizado" src="./Vista/Recursos/Imagenes/ayuda.jpeg" alt="Logo-AyudaEnAccion">
+                </a>
+                <a href="https://es.greenpeace.org/es/" target="_blank">
+                    <img class="normalizado" src="./Vista/Recursos/Imagenes/greenpeace.jpeg" alt="Logo-Greenpeace">
+                </a>
+                <a href="https://accionsolidaria.info/" target="_blank">
+                    <img class="normalizado" src="./Vista/Recursos/Imagenes/accion-solidaria.jpg" alt="Logo-AccionSolidaria">
+                </a>
+                
             </div>
             <div id="contenedor-imagenes-inferior">
-                <img class="normalizado" src="./Vista/Recursos/Imagenes/medicos.png" alt="Logo-MedicosSinFronteras">
-                <img class="normalizado" src="./Vista/Recursos/Imagenes/cear.jpg" alt="Logo-Cear">
-                <img class="normalizado" src="./Vista/Recursos/Imagenes/unicef.jpg" alt="Logo-Unicef">
+                <a href="https://www.msf.es/" target="_blank">
+                    <img class="normalizado" src="./Vista/Recursos/Imagenes/medicos.png" alt="Logo-MedicosSinFronteras">
+                </a>
+                <a href="https://www.cear.es/" target="_blank">
+                    <img class="normalizado" src="./Vista/Recursos/Imagenes/cear.jpg" alt="Logo-Cear">
+                </a>
+                <a href="https://www.unicef.es/" target="_blank">
+                    <img class="normalizado" src="./Vista/Recursos/Imagenes/unicef.jpg" alt="Logo-Unicef">
+                </a>
             </div>
         </div>
 
         <div id="bloque4">
             <h2>CONVIÉRTETE EN UNA ENTIDAD COLABORADORA</h2>
             <p>Las entidades colaboradoras son empresas y organizaciones que están alineadas con nuestros proposito y quieren ayudar a escalar su impacto ayudándonos a expandirlos.</p>
-            <button type="button" class="btn">Contáctanos</button>
+            <!-- <button type="button" class="btn">Contáctanos</button> -->
+            <p>Pincha <a href="mailto:SocialHope@hotmail.com" id="correo-automatico">aquí</a> o envíanos un correo a <span id="correo">SocialHope@hotmail.com</span></p>
+
         </div>
     </div>
     <!-- FIN PRINCIPAL -->
