@@ -17,7 +17,7 @@
     }
 ?>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -28,62 +28,62 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div style="display: flex; justify-content: center; height: 100%;">
-                    <img class="d-block" src="./Vista/Recursos/Imagenes/ac.jpg" alt="Imagen 1">
+                    <img class="d-block" src="./Vista/Recursos/Imagenes/ac.jpg" alt="Imagen 1" id="acnur">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
                     <h5>PUNTOS TOTALES OBTENIDOS: ####</h5>
                     <a href="https://eacnur.org/es" target="_blank">
                         <button>Visitar su web</button>
                     </a>
-                    <button id="boton-donar">Donar puntos</button>
+                    <button class="boton-donar">Donar puntos</button>
                 </div>
             </div>
             <div class="carousel-item">
                 <div style="display: flex; justify-content: center; height: 100%;">
-                    <img class="d-block" src="./Vista/Recursos/Imagenes/AyudaGrande.jpg" alt="Imagen 2">
+                    <img class="d-block" src="./Vista/Recursos/Imagenes/aea.jpg" alt="Imagen 2" id="ayuda-en-accion">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
                     <h5>PUNTOS TOTALES OBTENIDOS: ####</h5>
                     <a href="https://ayudaenaccion.org/" target="_blank">
                         <button>Visitar su web</button>
                     </a>
-                    <button id="boton-donar">Donar puntos</button>
+                    <button class="boton-donar">Donar puntos</button>
                 </div>
             </div>
             <div class="carousel-item">
                 <div style="display: flex; justify-content: center; height: 100%;">
-                    <img class="d-block" src="./Vista/Recursos/Imagenes/as.jpg" alt="Imagen 3">
+                    <img class="d-block" src="./Vista/Recursos/Imagenes/as.jpg" alt="Imagen 3" id="accion-solidaria">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
                     <h5>PUNTOS TOTALES OBTENIDOS: ####</h5>
                     <a href="https://accionsolidaria.info/" target="_blank">
                         <button>Visitar su web</button>
                     </a>
-                    <button id="boton-donar">Donar puntos</button>
+                    <button class="boton-donar">Donar puntos</button>
                 </div>
             </div>
             <div class="carousel-item">
                 <div style="display: flex; justify-content: center; height: 100%;">
-                    <img class="d-block" src="./Vista/Recursos/Imagenes/mf.jpg" alt="Imagen 4">
+                    <img class="d-block" src="./Vista/Recursos/Imagenes/mf.jpg" alt="Imagen 4" id="medicos-sin-fronteras">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
                     <h5>PUNTOS TOTALES OBTENIDOS: ####</h5>
                     <a href="https://www.msf.es/" target="_blank">
                         <button>Visitar su web</button>
                     </a>
-                    <button id="boton-donar">Donar puntos</button>
+                    <button class="boton-donar">Donar puntos</button>
                 </div>
             </div>
             <div class="carousel-item">
                 <div style="display: flex; justify-content: center; height: 100%;">
-                    <img class="d-block" src="./Vista/Recursos/Imagenes/u.jpg" alt="Imagen 5">
+                    <img class="d-block" src="./Vista/Recursos/Imagenes/u.jpg" alt="Imagen 5" id="unicef">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
                     <h5>PUNTOS TOTALES OBTENIDOS: ####</h5>
                     <a href="https://www.unicef.es/" target="_blank">
                         <button>Visitar su web</button>
                     </a>
-                    <button id="boton-donar">Donar puntos</button>
+                    <button class="boton-donar">Donar puntos</button>
                 </div>
             </div>
         </div>

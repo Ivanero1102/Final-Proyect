@@ -82,7 +82,7 @@
               <label for="apellido">Apellido</label><br>
               <input type="text" id="apellido" name="apellido" required><br>
               <label for="edad">Edad</label><br>
-              <input type="number" id="edad" name="edad" required><br>
+              <input type="number" id="edad" name="edad" min="18" max="115" step="1" required><br>
               <label for="email">Email</label><br> 
               <input type="email" id="email" name="email" required><br>
               <label for="contrasena">Contraseña</label><br>
