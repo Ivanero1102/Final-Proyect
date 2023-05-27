@@ -17,4 +17,4 @@
 <link rel="stylesheet" href="./Vista/CSS/header.css">
 <link rel="stylesheet" href="./Vista/CSS/footer.css">
 <link rel="stylesheet" href="./Vista/CSS/popup.css">
-<script src="./Vista/JS/popup.js" defer></script>
+<script src="./Vista/JS/popup-registro-login.js" defer></script>

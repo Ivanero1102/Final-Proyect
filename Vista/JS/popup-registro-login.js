@@ -7,4 +7,3 @@ document.getElementById('boton-acceder').addEventListener('click', function () {
 document.querySelector('.cerrar').addEventListener('click', function () {
     document.getElementById('popup').style.display = 'none';
 });
-

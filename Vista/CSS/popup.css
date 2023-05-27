@@ -10,7 +10,7 @@
     z-index: 9999;
 }
 
-#popup-contenido{
+#popup-contenido, #popup-contenido-donacion{
     background-color: white;
     position: absolute;
     left: 50%;
@@ -23,6 +23,10 @@
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     border-radius: 1vw;
     width: 90%;
+}
+
+#popup-contenido-donacion{
+    width: 25%;
 }
 
 .cerrar {
@@ -40,7 +44,7 @@
     color: #60cbb5;
 }
 
-#contenedor-login-registro {
+#contenedor-login-registro, #contenedor-donacion-puntos {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -49,11 +53,11 @@
     width: 100%;
 }
 
-#contenedor-login-registro form{
+#contenedor-login-registro form, #contenedor-donacion-puntos form{
     text-align: start;
 }
 
-#contenedor-login-registro h2{
+#contenedor-login-registro h2, #contenedor-donacion-puntos h2{
     font-size: 3vw;
     font-weight: bold;
     white-space: nowrap;
@@ -63,7 +67,7 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-#contenedor-login-registro input {
+#contenedor-login-registro input, #contenedor-donacion-puntos input, #contenedor-donacion-puntos select {
     border: 1px solid silver;
     border-radius: 0.5vw;
     width: 100%;
@@ -73,18 +77,18 @@
     font-weight: bold;
 }
 
-#contenedor-login-registro input[type=submit]{
+#contenedor-login-registro input[type=submit], #contenedor-donacion-puntos input[type=submit]{
     background-color: #60cbb5;
     color: white;
     margin-top: 1vw;
     margin-bottom: 2vw;
 }
 
-#contenedor-login-registro input[type=submit]:hover{
+#contenedor-login-registro input[type=submit]:hover, #contenedor-donacion-puntos input[type=submit]:hover{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
-#contenedor-login-registro input:focus {
+#contenedor-login-registro input:focus, #contenedor-donacion-puntos input:focus {
     outline: none;
     border: 2px solid #1fc176;
 }
