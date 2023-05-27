@@ -2,9 +2,8 @@
 class Ong{
     public $idOng;
     public $nombreOng;
-    public $puntos;
-    public $descripcion;
-    public $img;
+    public $puntosOng;
+
     /**
      * Sacar los atributos de un objeto de tipo Ong
      * 

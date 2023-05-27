@@ -4,20 +4,34 @@ include_once("/xampp/htdocs/Final-Proyect/DS/crud.php");
 
 class OperativaPunto {
       
-    //Habria que juntar las dos funciones en una sola, acutalmente esta asi para hacer pruebas
+    /**
+     * Saca los datos de punto seleccionado de la BBDD
+     * 
+     * @param string $idUsuario | Id del usuario
+     * @return mixed  $crud->consultaPreparada("SELECT * FROM PUNTOS WHERE id_usuario = :id_usuario", array(':id_usuario' => $idUsuario)); | Array con los datos de la BBDD
+     * 
+     */
     public function sacarPuntos($idUsuario)
     {
         $crud = new CRUD();
         $crud->consultaPreparada("SELECT * FROM PUNTOS WHERE id_usuario = :id_usuario", array(':id_usuario' => $idUsuario));
     }
 
-
-    public function creacion($idUsuario, $puntosActuales, $totalPuntos ,$puntosGastados)
+    /**
+     * Saca los datos del usuario seleccionado de la BBDD
+     * 
+     * @param string $idUsuario | Id del usuario
+     * @param string $idUsuario | Id de la ong
+     * @param string $puntosGastados | Correo del usuario
+     * @param string $contrasenaUsuario | Contraseña del usuario
+     * @return mixed $objetoUsuario | Objeto de tipo usuario
+     * 
+     */
+    public function creacion($idUsuario, $idOng ,$puntosGastados)
     {
         $objetoPunto = new Punto();
         $objetoPunto->__set('idUsuario',$idUsuario);
-        $objetoPunto->__set('puntosActuales', $puntosActuales);
-        $objetoPunto->__set('totalPuntos', $totalPuntos);
+        $objetoPunto->__set('idOng', $idOng);
         $objetoPunto->__set('puntosGastados', $puntosGastados);
         return $objetoPunto;
     }

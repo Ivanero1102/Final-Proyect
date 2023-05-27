@@ -1,8 +1,7 @@
 <?php
 class Punto{
-    public $idUsuaio;
-    public $puntosActuales;
-    public $totalPuntos;
+    public $idUsuario;
+    public $idOng;
     public $puntosGastados;
 
     /**

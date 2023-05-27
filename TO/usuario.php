@@ -6,6 +6,7 @@ class Usuario{
     public $edadUsuario;
     public $correoUsuario;
     public $contrasenaUsuario;
+    public $puntosUsuario;
 
     /**
      * Sacar los atributos de un objeto de tipo Usurio

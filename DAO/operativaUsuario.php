@@ -25,18 +25,21 @@ class OperativaUsuaio{
      * @param string $edadUsuario | Edad del usuario
      * @param string $correoUsuario | Correo del usuario
      * @param string $contrasenaUsuario | Contraseña del usuario
+     * @param string $puntosGastados | Puntos del usuario, por defecto es 0
+     * @param string $idUsuario | Id del usuario, por defecto es null
      * @return mixed $objetoUsuario | Objeto de tipo usuario
      * 
      */
-    public function creacion($nombreUsuario, $apellidosUsuario, $edadUsuario, $correoUsuario, $contrasenaUsuario)
+    public function creacion($nombreUsuario, $apellidosUsuario, $edadUsuario, $correoUsuario, $contrasenaUsuario, $puntosGastados = 0, $idUsuario = null)
     {
         $objetoUsuario = new Usuario();
-        $objetoUsuario->__set('idUsuario',null);
+        $objetoUsuario->__set('idUsuario', $idUsuario);
         $objetoUsuario->__set('nombreUsuario',$nombreUsuario);
         $objetoUsuario->__set('apellidosUsuario', $apellidosUsuario);
         $objetoUsuario->__set('edadUsuario', $edadUsuario);
         $objetoUsuario->__set('correoUsuario', $correoUsuario);
         $objetoUsuario->__set('contrasenaUsuario', $contrasenaUsuario);
+        $objetoUsuario->__set('puntosGastados', $puntosGastados);
         return $objetoUsuario;
     }
 
@@ -85,7 +88,7 @@ class OperativaUsuaio{
                 return false;
             } else {
                 $crud = new CRUD();
-                $sql = "INSERT INTO USUARIOS (nombre_usuario, apellidos_usuario, edad_usuario, correo_usuario, contrasegna_usuario) VALUES (:nombre_usuario, :apellidos_usuario, :edad_usuario, :correo_usuario, :contrasena_usuario)";
+                $sql = "INSERT INTO USUARIOS (nombre_usuario, apellidos_usuario, edad_usuario, correo_usuario, contrasena_usuario) VALUES (:nombre_usuario, :apellidos_usuario, :edad_usuario, :correo_usuario, :contrasena_usuario)";
                 $crud->consultaPreparada($sql, array(':nombre_usuario' => $nombreUsuario, ':apellidos_usuario' => $apellidosUsuario, ':edad_usuario'=> $edadUsuario, ':correo_usuario'=>$correoUsuario,':contrasena_usuario'=>$passwordCifrada));
 
                 return true;
@@ -95,11 +98,6 @@ class OperativaUsuaio{
             die();
         }
     }
-
-    /* La funcion recibe un objetpo de tipo usuario, con el nombre del usuario y su contraseña, comprueba que ambos coincidan con las que se encuentran en la BBDD 
-        , importante desencriptar la contraseña de la BBDD antes de comparar.
-        En caso de que todo coincida, se creara una sesion llamada $_SESSION['usuario'] */
-    /*La funcion no devuelve nada*/
 
     /**
      * Se encarga de introducir un usuario en la base de datos
@@ -114,26 +112,16 @@ class OperativaUsuaio{
 
         try {
 
-            
-            // Atributos del usuario
-            // $idUsuario = $usuario->__get('idUsuario');
             $correoUsuario = $usuario->__get('correoUsuario');
             $contrasenaUsuario = $usuario->__get('contrasenaUsuario');
 
-            // Conexion bbdd 
-            // $crud = new CRUD();
-            // $sql = "SELECT COUNT(*) as total FROM USUARIOS WHERE id_usuario = :id_usuario";
-            // $resultado = $crud->consultaPreparada($sql, array(':id_usuario' => $idUsuario));
-
             $crud = new CRUD();
-            $sql = "SELECT contrasegna_usuario FROM USUARIOS WHERE correo_usuario = :correo_usuario";
+            $sql = "SELECT contrasena_usuario FROM USUARIOS WHERE correo_usuario = :correo_usuario";
             $resultado = $crud->consultaPreparada($sql, array(':correo_usuario' => $correoUsuario));
 
-            if ($resultado['contrasegna_usuario'] != null) {
+            if ($resultado['contrasena_usuario'] != null) {
 
-                //password_verify(string $password, string $hash)
-                if (password_verify($contrasenaUsuario, $resultado['contrasegna_usuario'])) {
-                    // session_start();
+                if (password_verify($contrasenaUsuario, $resultado['contrasena_usuario'])) {
                     $_SESSION['usuario'] = $correoUsuario;
                     return true;
                 } else {
@@ -147,15 +135,15 @@ class OperativaUsuaio{
         }
     }
 
-
-    /* La funcion se encargara de borrar la sesion $_SESSION['usuario'] */
-
-    /*La funcion no devuelve nada*/
+    /**
+     * Se encargara de borrar la sesion $_SESSION['usuario']
+     * 
+     */
     public function logout()
     {
         try {
-            session_unset(); // Eliminar todas las variables de sesión
-            session_destroy(); // Destruir la sesión actual
+            session_unset(); 
+            session_destroy(); 
 
         } catch (PDOException $e) {
             die("Error: " . $e->getMessage());
