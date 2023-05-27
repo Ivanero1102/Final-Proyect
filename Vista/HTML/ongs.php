@@ -105,14 +105,14 @@
         <div id="contenedor-donacion-puntos">
             <form action="" method="post">
                 <label for="puntos-a-donar">Puntos a donar</label><br>
-                <input type="number" step="25" id="puntos-a-donar" name="puntos-a-donar" required><br>
+                <input type="number" step="25" id="puntos-a-donar" name="puntos" required><br>
                 <label for="apellido">ONG</label><br>
                 <select>
-                    <option value="opcion1">ACNUR</option>
-                    <option value="opcion2">AYUDA EN ACCIÓN</option>
-                    <option value="opcion3">ACCIÓN SOLIDARIA</option>
-                    <option value="opcion2">MÉDICOS SIN FRONTERAS</option>
-                    <option value="opcion3">UNICEF</option>
+                    <option value="acnur">ACNUR</option>
+                    <option value="ayudaEnAccion">AYUDA EN ACCIÓN</option>
+                    <option value="accionSolidaria">ACCIÓN SOLIDARIA</option>
+                    <option value="medicosSinFronteras">MÉDICOS SIN FRONTERAS</option>
+                    <option value="unicef">UNICEF</option>
                 </select><br>
                 <input type="submit" value="Donar" name="Donar">
             </form>
