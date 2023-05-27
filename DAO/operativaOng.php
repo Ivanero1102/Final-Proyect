@@ -12,14 +12,12 @@ class OperativaOng{
     }
 
 
-    public function creacion($idOng, $nombreOng, $puntos, $descripcion, $img)
+    public function creacion($nombreOng, $puntosOng, $idOng = null)
     {
         $objetoOng = new Ong();
         $objetoOng->__set('idOng',$idOng);
         $objetoOng->__set('nombreOng', $nombreOng);
-        $objetoOng->__set('puntos', $puntos);
-        $objetoOng->__set('descripcion', $descripcion);
-        $objetoOng->__set('img', $img);
+        $objetoOng->__set('puntosOng', $puntosOng);
         return $objetoOng;
     }
 

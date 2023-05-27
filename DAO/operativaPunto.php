@@ -17,24 +17,6 @@ class OperativaPunto {
         $crud->consultaPreparada("SELECT * FROM PUNTOS WHERE id_usuario = :id_usuario", array(':id_usuario' => $idUsuario));
     }
 
-    /**
-     * Saca los datos del usuario seleccionado de la BBDD
-     * 
-     * @param string $idUsuario | Id del usuario
-     * @param string $idUsuario | Id de la ong
-     * @param string $puntosGastados | Correo del usuario
-     * @param string $contrasenaUsuario | Contraseña del usuario
-     * @return mixed $objetoUsuario | Objeto de tipo usuario
-     * 
-     */
-    public function creacion($idUsuario, $idOng ,$puntosGastados)
-    {
-        $objetoPunto = new Punto();
-        $objetoPunto->__set('idUsuario',$idUsuario);
-        $objetoPunto->__set('idOng', $idOng);
-        $objetoPunto->__set('puntosGastados', $puntosGastados);
-        return $objetoPunto;
-    }
 
     public function sumaPuntos($punto, $puntos) { // MIRANDO VIDEOS (+puntosActuales, +totalPuntos)
 
@@ -61,6 +43,42 @@ class OperativaPunto {
             return true;
         } else {
             return false;
+        }
+    }
+
+    /**
+     * Saca los datos del usuario seleccionado de la BBDD
+     * 
+     * @param string $idUsuario | Id del usuario
+     * @param string $idUsuario | Id de la ong
+     * @param string $puntosGastados | Correo del usuario
+     * @param string $contrasenaUsuario | Contraseña del usuario
+     * @return mixed $objetoUsuario | Objeto de tipo usuario
+     * 
+     */
+    public function creacion($idUsuario, $idOng ,$puntosGastados, $idPunto = null){
+        $objetoPunto = new Punto();
+        $objetoPunto->__set('idPunto',$idPunto);
+        $objetoPunto->__set('idUsuario',$idUsuario);
+        $objetoPunto->__set('idOng', $idOng);
+        $objetoPunto->__set('puntosGastados', $puntosGastados);
+        return $objetoPunto;
+    }
+
+    public function donacion($punto){
+        try {
+            $idOng = $punto->__get('idOng');
+            $correoUsuario = $punto->__get('correoUsuario');
+            $puntosGastados = $punto->__get('puntosGastados');
+
+            $crud = new CRUD();
+            $sql = "INSERT INTO puntos (id_ong, correo_usuario, puntos_gastados) VALUES (:id_ong, :correo_usuario, :puntos_gastados)";
+            $crud->consultaPreparada($sql, array(':id_ong' => $idOng, ':correo_usuario' => $correoUsuario, ':puntos_gastados'=> $puntosGastados));
+
+                return true;
+        } catch (PDOException $e) {
+            echo "Error " . $e->getMessage();
+            die();
         }
     }
 
