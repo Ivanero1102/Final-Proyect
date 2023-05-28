@@ -41,6 +41,7 @@
         <li class="nav-item">
           <!-- Botón Acceder si no está logeado -->
           <?php
+            echo $usuarioObjeto->__get('puntosUsuario');
             if (!isset($_SESSION['usuario'])) echo '<button id="boton-acceder" class="nav-link text-nowrap">Acceder</button>';
             else {
               echo '

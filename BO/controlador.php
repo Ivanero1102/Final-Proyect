@@ -25,4 +25,13 @@ if(isset($_POST['Registro'])){
     $usuario->registro($usuarioObjeto);
 }
 
+if (isset($_SESSION['usuario'])) {
+    $correo = $_SESSION['usuario'];
+    $usuarioBBDD = $usuario->sacarUsuario($correo);
+    $usuarioObjeto = $usuario->creacion($usuarioBBDD['nombre_usuario'], $usuarioBBDD['apellidos_usuario'], $usuarioBBDD['edad_usuario'],$usuarioBBDD['correo_usuario'],$usuarioBBDD['contrasena_usuario'],$usuarioBBDD['puntos_usuario'],$usuarioBBDD['id_usuario']);
+    // echo $usuarioObjeto->__get('puntosUsuario');
+    $ongBBDD = $ong->sacarTodasOng();
+    // print_r($ongBBDD);
+}   
+
 ?>

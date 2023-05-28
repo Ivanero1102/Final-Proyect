@@ -14,7 +14,7 @@ class OperativaPunto {
     public function sacarPuntos($correoUsuario)
     {
         $crud = new CRUD();
-        $crud->consultaPreparada("SELECT * FROM PUNTOS WHERE correo_usuario = :correo_usuario", array(':correo_usuario' => $correoUsuario));
+        return $crud->consultaPreparada("SELECT * FROM PUNTOS WHERE correo_usuario = :correo_usuario", array(':correo_usuario' => $correoUsuario));
     }
 
     /**

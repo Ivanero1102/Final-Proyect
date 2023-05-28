@@ -8,9 +8,22 @@ class OperativaOng{
     public function sacarOng($nombreOng)
     {
         $crud = new CRUD();
-        $crud->consultaPreparada("SELECT * FROM ONG WHERE nombre_ong = :nombre_ong", array(':nombre_ong' => $nombreOng));
+        return $crud->consultaPreparada("SELECT * FROM ONG WHERE nombre_ong = :nombre_ong", array(':nombre_ong' => $nombreOng));
     }
 
+    public function sacarTodasOng()
+    {
+        $crud = new CRUD();
+        $nombre = array();
+        $puntos = array();
+        foreach ($crud->consulta("SELECT * FROM ONG") as $row){
+            // print_r($row['puntos_ong']);
+            array_push($nombre, $row['nombre_ong']);
+            array_push($puntos, $row['puntos_ong']);
+        }
+        $total = array_combine($nombre, $puntos);
+        return $total;
+    }
 
     public function creacion($nombreOng, $puntosOng, $idOng = null)
     {

@@ -79,6 +79,9 @@
                     <img class="d-block" src="./Vista/Recursos/Imagenes/u.jpg" alt="Imagen 5" id="unicef">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
+                    <?php
+                    print_r($ongBBDD);
+                    ?>
                     <h5>PUNTOS TOTALES OBTENIDOS: ####</h5>
                     <a href="https://www.unicef.es/" target="_blank">
                         <button>Visitar su web</button>

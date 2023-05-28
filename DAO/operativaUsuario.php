@@ -11,7 +11,7 @@ class OperativaUsuaio{
      * @return mixed $crud->consultaPreparada("SELECT * FROM USUARIOS WHERE correo_usuario = :correo_usuario", array(':correo_usuario' => $correoUsuario)); | Array con los datos de la BBDD
      * 
      */
-    public function sacarUSuairo($correoUsuario)
+    public function sacarUsuario($correoUsuario)
     {
         $crud = new CRUD();
         return $crud->consultaPreparada("SELECT * FROM USUARIOS WHERE correo_usuario = :correo_usuario", array(':correo_usuario' => $correoUsuario));
