@@ -1,17 +1,22 @@
 .carousel-item {
     height: 93vh;
+}
+
+.carousel-inner {
     background-image: url(../Recursos/Imagenes/fondo-ong.jpg);
     background-size: cover;
 }
 
 .carousel-item img {
-    filter: brightness(1.1);
-    mix-blend-mode: multiply;
-    height: 90%;
+    max-width: 100%;
+    max-height: 40rem;
 }
 
-.carousel-indicators [data-bs-target] {
-    background-color: #62d39f;
+.contenedor-imagen {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
 }
 
 h5 {
@@ -58,24 +63,24 @@ button:focus {
 
 /* Ordenadores de escritorio / Pantallas grandes */
 @media (min-width: 1025px) and (max-width: 1200px) {
-    #popup-contenido-donacion {
+    /* #popup-contenido-donacion {
         width: 30%;
-    }
+    } */
 }
 
 /* Pantallas pequeñas / Portátiles */
 @media (min-width: 769px) and (max-width: 1024px) {
-    #ayuda-en-accion, #medicos-sin-fronteras, #unicef {
+    /* #ayuda-en-accion, #medicos-sin-fronteras, #unicef {
         width: 100%;
     }
     #popup-contenido-donacion {
         width: 37%;
-    }
+    } */
 }
 
 /* iPads / Tablets */
 @media (min-width: 481px) and (max-width: 768px) {
-    .carousel-item img {
+    /* .carousel-item img {
         margin-top: 35%;
         height: 50%;
     }
@@ -84,12 +89,12 @@ button:focus {
     }
     #contenedor-donacion-puntos input[type=submit]{
         margin-bottom: 3vw;
-    }
+    } */
 }
 
 /* Dispositivos móviles */
 @media (min-width: 320px) and (max-width: 480px) {
-    .carousel-item img {
+    /* .carousel-item img {
         margin-top: 81%;
         height: 29%;
     }
@@ -98,6 +103,6 @@ button:focus {
     }
     #contenedor-donacion-puntos input[type=submit]{
         margin-bottom: 4vw;
-    }
+    } */
 }
 /***********************************************************************************************/
