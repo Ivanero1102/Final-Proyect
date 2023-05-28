@@ -33,7 +33,9 @@
         // Mostrar el video de YouTube
         echo '<div class="container-fluid d-flex flex-column" id="main">';
         echo '<span id="titulo" class="text-center">GANA PUNTOS MIRANDO ESTE VIDEO</span>';
-        echo '<div class="embed-responsive embed-responsive-16by9 d-flex align-items-center justify-content-center" id="video-container"></div>';
+        echo '<div class="embed-responsive embed-responsive-16by9 d-flex align-items-center justify-content-center" id="video-container">';
+        // echo '<iframe src="https://www.youtube.com/embed/VIDEO_ID" sandbox="allow-same-origin"></iframe>';
+        echo '</div>';
         echo '<button id="recompensa-boton" onclick="completarVideo()">Reclamar recompensa</button>';
         echo '</div>';
 
@@ -42,7 +44,7 @@
         // </script>';
     }
 ?>
-
+<iframe src="https://www.youtube.com/embed/VIDEO_ID" sandbox="allow-same-origin"></iframe>
 <?php require 'footer.html'; ?>
 <script src="./Vista/JS/video.js" defer></script>
 </body>

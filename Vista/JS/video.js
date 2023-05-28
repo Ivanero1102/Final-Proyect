@@ -2,14 +2,22 @@ var player;
 
 function onYouTubeIframeAPIReady() {
     // Obtener un video aleatorio de 30 segundos de duración
+    // obtenerVideoAleatorio(function(videoId) {
+    //     player = new YT.Player("video-container", {
+    //         videoId: videoId,
+    //         playerVars: { "controls": 0 },
+    //         events: {
+    //             onStateChange: onPlayerStateChange
+    //         },
+    //     });
+    // });
+
     obtenerVideoAleatorio(function(videoId) {
-        player = new YT.Player("video-container", {
-            videoId: videoId,
-            playerVars: { "controls": 0 },
-            events: {
-                onStateChange: onPlayerStateChange
-            },
-        });
+    var ifrm = document.createElement("iframe");
+        ifrm.setAttribute("src", "https://www.youtube.com/embed/"+videoId+"?enablejsapi=1&controls=0&playinfo=0&disablekb=1");
+        ifrm.style.width = "640px";
+        ifrm.style.height = "480px";
+        document.body.appendChild(ifrm);
     });
 }
 
@@ -20,11 +28,11 @@ function obtenerVideoAleatorio(callback) {
         dataType: "json",
         type: "GET",
         data: {
-            key: "AIzaSyBsfzR2BC71MsFPy44dXRIPpYTSJYMBWwI", // Reemplazar con tu propia API Key de YouTube
+            key: "AIzaSyAl3UJSwRRoXJzC9tAFYE47LK6BeDhG4Wc", // Reemplazar con tu propia API Key de YouTube
             q: "", // Puedes especificar términos de búsqueda si lo deseas
             type: "video",
             videoEmbeddable: true,
-            maxResults: 30, // Obtener hasta 10 resultados
+            maxResults: 1, // Obtener hasta 10 resultados
             order: "date", // Ordenar los resultados aleatoriamente
         },
         success: function(data) {
