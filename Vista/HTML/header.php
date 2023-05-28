@@ -9,21 +9,6 @@
     </button>
 
     <!-- LOGO -->
-    <!-- Ocultar logo al desplegar -->
-    <script>
-      window.addEventListener('DOMContentLoaded', function() {
-        var toggler = document.getElementById('desplegable');
-        var logo = document.getElementById('logo');
-
-        toggler.addEventListener('click', function() {
-          if (logo.style.display !== 'none') {
-            logo.style.display = 'none';
-          } else {
-            logo.style.display = 'block';
-          }
-        });
-      });
-    </script>
     <div>
       <img id="logo" src="./Vista/Recursos/Logo2.png" alt="Logo-SocialHope" />
     </div>
@@ -56,16 +41,20 @@
         <li class="nav-item">
           <!-- Botón Acceder si no está logeado -->
           <?php
-            // echo $usuarioObjeto->__get('puntosUsuario');
             if (!isset($_SESSION['usuario'])) echo '<button id="boton-acceder" class="nav-link text-nowrap">Acceder</button>';
             else {
-              echo '
-              <form action="" method="post">
-                <input type="submit" value="Cerrar Sesión" id="boton-cerrar-sesion" name="Logout" class="nav-link text-nowrap">
-              </form>';
+              echo
+              '<div class="d-flex align-items-center justify-content-end">'.
+                '<span id="puntos-usuario">'.$usuarioObjeto->__get('puntosUsuario').' SH</span>'.
+                '<img id="gif-puntos" src="./Vista/Recursos/Imagenes/puntos.gif" alt="Logo-SocialHope"/>'.
+                '<form action="" method="post">
+                  <input type="submit" value="Cerrar Sesión" id="boton-cerrar-sesion" name="Logout" class="nav-link text-nowrap">
+                </form>'.
+              '</div>'
+              ;
             }
           ?>
-          
+        
         </li>
       </ul>
     </div>
