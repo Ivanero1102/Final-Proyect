@@ -27,7 +27,7 @@ class OperativaPunto {
      * @return mixed $objetoUsuario | Objeto de tipo usuario
      * 
      */
-    public function creacion($idOng ,$correoUsuario ,$puntosGastados, $idPunto = null){
+    public function creacion($idOng ,$correoUsuario ,$puntosGastados = 0, $idPunto = null){
         $objetoPunto = new Punto();
         $objetoPunto->__set('idPunto',$idPunto);
         $objetoPunto->__set('idOng', $idOng);

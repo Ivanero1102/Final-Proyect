@@ -110,7 +110,7 @@
                 <label for="puntos-a-donar">Puntos a donar</label><br>
                 <input type="number" step="25" id="puntos-a-donar" name="puntos" required><br>
                 <label for="apellido">ONG</label><br>
-                <select>
+                <select name="ong">
                     <option value="acnur">ACNUR</option>
                     <option value="ayudaEnAccion">AYUDA EN ACCIÓN</option>
                     <option value="accionSolidaria">ACCIÓN SOLIDARIA</option>

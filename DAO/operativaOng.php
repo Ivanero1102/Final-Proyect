@@ -35,9 +35,11 @@ class OperativaOng{
     }
 
     public function sumaPuntosOng($ong, $puntos) { 
-        $ong->__set('puntos', ($ong->__get('puntos') + $puntos));
+        $ong->__set('puntosOng', ($ong->__get('puntosOng') + $puntos));
         $crud = new CRUD();
-        $crud->consultaPreparada("UPDATE ong SET puntos_ong = :puntos_ong WHERE nombre_ong=:nombre_ong", array(':puntos_ong' => $ong->get('puntosOng'), ':nombre_ong' => $ong->get('nombreOng')));
+        $punto = $ong->__get('puntosOng');
+        $nombre = $ong->__get('nombreOng');
+        $crud->consultaPreparada("UPDATE ong SET puntos_ong = :puntos_ong WHERE nombre_ong=:nombre_ong", array(':puntos_ong' => $punto, ':nombre_ong' => $nombre));
         return true;
     }
 

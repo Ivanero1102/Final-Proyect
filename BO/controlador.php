@@ -32,6 +32,20 @@ if (isset($_SESSION['usuario'])) {
     // echo $usuarioObjeto->__get('puntosUsuario');
     $ongBBDD = $ong->sacarTodasOng();
     // print_r($ongBBDD);
+
+    if(isset($_POST['Donar'])){
+        print_r($_POST);
+        $usuario->restaPuntos($usuarioObjeto, $_POST['puntos']);
+        $ongBBDD2 = $ong->sacarOng($_POST['ong']);
+        $ongObjeto = $ong->creacion($ongBBDD2['nombre_ong'], $ongBBDD2['puntos_ong'], $ongBBDD2['id_ong']);
+        $ong->sumaPuntosOng($ongObjeto, $_POST['puntos']);
+        $idOng = $ongObjeto->__get('idOng');
+        $correoUsuario = $usuarioObjeto->__get('correoUsuario');
+        $puntoObjeto = $punto->creacion($idOng, $correoUsuario, $_POST['puntos']);
+        $punto->donacion($puntoObjeto);
+        header('Location: http://localhost/Final-Proyect/ongs');
+        die();
+    }
 }   
 
 ?>

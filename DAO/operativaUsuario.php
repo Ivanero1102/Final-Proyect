@@ -154,11 +154,15 @@ class OperativaUsuaio{
     public function sumaPuntos($usuario, $sumaPuntos) { // MIRANDO VIDEOS (+puntosActuales, +totalPuntos)
 
         // Actualización de los puntos en el objeto $punto
-        $usuario->__set('puntosUsuario', ($usuario->__get('puntosUsuario') + $sumaPuntos));
+        $puntosU = $usuario->__get('puntosUsuario');
+        $puntos = $puntosU + $sumaPuntos;
+        $usuario->__set('puntosUsuario',$puntos);
 
         // Actualización de puntos en la base de datos
         $sql = "UPDATE usuarios SET puntos_usuario = :puntos_usuario WHERE correo_usuario = :correo_usuario";
-        $conn = (new CRUD())->consultaPreparada($sql, array(':puntos_usuario' => $usuario->get('puntosUsuario'), ':correo_usuario' => $usuario->get('correoUsuario')));
+        $puntosUser = $usuario->__get('puntosUsuario');
+        $correoUser = $usuario->__get('correoUsuario');
+        $conn = (new CRUD())->consultaPreparada($sql, array(':puntos_usuario' => $puntosUser, ':correo_usuario' => $correoUser));
         return true;
     }
 
@@ -168,11 +172,15 @@ class OperativaUsuaio{
 
         // Actualización de los puntos en el objeto $punto
         if ($usuario->__get('puntosUsuario') >= $restaPuntos) { // Si tiene los puntos suficientes...
-            $usuario->__set('puntosUsuario', ($usuario->__get('puntosUsuario') - $restaPuntos));
+            $puntosU = $usuario->__get('puntosUsuario');
+            $puntos = $puntosU - $restaPuntos;
+            $usuario->__set('puntosUsuario', $puntos);
 
             // Actualización de puntos en la base de datos
             $sql = "UPDATE usuarios SET puntos_usuario = :puntos_usuario WHERE correo_usuario = :correo_usuario";
-            $conn = (new CRUD())->consultaPreparada($sql, array(':puntos_usuario' => $usuario->get('puntosUsuario'), ':correo_usuario' => $usuario->get('correoUsuario')));
+            $puntosUser = $usuario->__get('puntosUsuario');
+            $correoUser = $usuario->__get('correoUsuario');
+            $conn = (new CRUD())->consultaPreparada($sql, array(':puntos_usuario' => $puntosUser, ':correo_usuario' => $correoUser));
             return true;
         } else {
             return false;
