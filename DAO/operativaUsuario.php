@@ -30,7 +30,7 @@ class OperativaUsuaio{
      * @return mixed $objetoUsuario | Objeto de tipo usuario
      * 
      */
-    public function creacion($nombreUsuario, $apellidosUsuario, $edadUsuario, $correoUsuario, $contrasenaUsuario, $puntosGastados = 0, $idUsuario = null)
+    public function creacion($nombreUsuario, $apellidosUsuario, $edadUsuario, $correoUsuario, $contrasenaUsuario, $puntosUsuario = 0, $idUsuario = null)
     {
         $objetoUsuario = new Usuario();
         $objetoUsuario->__set('idUsuario', $idUsuario);
@@ -39,7 +39,7 @@ class OperativaUsuaio{
         $objetoUsuario->__set('edadUsuario', $edadUsuario);
         $objetoUsuario->__set('correoUsuario', $correoUsuario);
         $objetoUsuario->__set('contrasenaUsuario', $contrasenaUsuario);
-        $objetoUsuario->__set('puntosGastados', $puntosGastados);
+        $objetoUsuario->__set('puntosUsuario', $puntosUsuario);
         return $objetoUsuario;
     }
 
@@ -147,6 +147,35 @@ class OperativaUsuaio{
 
         } catch (PDOException $e) {
             die("Error: " . $e->getMessage());
+        }
+    }
+
+
+    public function sumaPuntos($usuario, $sumaPuntos) { // MIRANDO VIDEOS (+puntosActuales, +totalPuntos)
+
+        // Actualización de los puntos en el objeto $punto
+        $usuario->__set('puntosUsuario', ($usuario->__get('puntosUsuario') + $sumaPuntos));
+
+        // Actualización de puntos en la base de datos
+        $sql = "UPDATE usuarios SET puntos_usuario = :puntos_usuario WHERE correo_usuario = :correo_usuario";
+        $conn = (new CRUD())->consultaPreparada($sql, array(':puntos_usuario' => $usuario->get('puntosUsuario'), ':correo_usuario' => $usuario->get('correoUsuario')));
+        return true;
+    }
+
+    /* La funcion recibe un objeto de tipo punto con los puntos que se van a restar, ejecuta la resta de los puntos y actualiza la BBDD */
+    /* La funcion no devuelve un mensaje en caso de que todo haya funcionado y un mensaje de error en caso contrario */
+    public function restaPuntos($usuario, $restaPuntos) { // DONANDO PUNTOS (+puntosGastados, -puntosActuales)
+
+        // Actualización de los puntos en el objeto $punto
+        if ($usuario->__get('puntosUsuario') >= $restaPuntos) { // Si tiene los puntos suficientes...
+            $usuario->__set('puntosUsuario', ($usuario->__get('puntosUsuario') - $restaPuntos));
+
+            // Actualización de puntos en la base de datos
+            $sql = "UPDATE usuarios SET puntos_usuario = :puntos_usuario WHERE correo_usuario = :correo_usuario";
+            $conn = (new CRUD())->consultaPreparada($sql, array(':puntos_usuario' => $usuario->get('puntosUsuario'), ':correo_usuario' => $usuario->get('correoUsuario')));
+            return true;
+        } else {
+            return false;
         }
     }
 }

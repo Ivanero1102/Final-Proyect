@@ -5,10 +5,10 @@ include_once("/xampp/htdocs/Final-Proyect/DS/crud.php");
 class OperativaOng{
 
     //Habria que juntar las dos funciones en una sola, acutalmente esta asi para hacer pruebas
-    public function sacarOng($idOng)
+    public function sacarOng($nombreOng)
     {
         $crud = new CRUD();
-        $crud->consultaPreparada("SELECT * FROM ONG WHERE id_ong = :id_ong", array(':id_ong' => $idOng));
+        $crud->consultaPreparada("SELECT * FROM ONG WHERE nombre_ong = :nombre_ong", array(':nombre_ong' => $nombreOng));
     }
 
 
@@ -24,7 +24,7 @@ class OperativaOng{
     public function sumaPuntosOng($ong, $puntos) { 
         $ong->__set('puntos', ($ong->__get('puntos') + $puntos));
         $crud = new CRUD();
-        $crud->consultaPreparada("UPDATE ong SET puntos=:puntos WHERE id_ong=:id_ong", array(':puntos' => $ong->get('puntos'), ':id_ong' => $ong->get('idOng')));
+        $crud->consultaPreparada("UPDATE ong SET puntos_ong = :puntos_ong WHERE nombre_ong=:nombre_ong", array(':puntos_ong' => $ong->get('puntosOng'), ':nombre_ong' => $ong->get('nombreOng')));
         return true;
     }
 
