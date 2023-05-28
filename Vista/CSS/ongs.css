@@ -10,7 +10,7 @@
     height: 90%;
 }
 
-.carousel-indicators li {
+.carousel-indicators [data-bs-target] {
     background-color: #62d39f;
 }
 
@@ -50,7 +50,6 @@ button:focus {
 .d-none {
     display: block !important;
 }
-
 /**************************************** MEDIA QUERIES ****************************************/
 /* Pantallas extra grandes / TV */
 @media (min-width: 1201px){
