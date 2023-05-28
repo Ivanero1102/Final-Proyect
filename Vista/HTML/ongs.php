@@ -195,7 +195,7 @@
         <div id="contenedor-donacion-puntos">
             <form action="" method="post">
                 <label for="puntos-a-donar">Puntos a donar</label><br>
-                <input type="number" step="25" id="puntos-a-donar" name="puntos" required><br>
+                <input type="number" step="25" id="puntos-a-donar" min='25' name="puntos" required><br>
                 <label for="apellido">ONG</label><br>
                 <select name="ong">
                     <option value="acnur">ACNUR</option>
