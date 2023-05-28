@@ -9,6 +9,21 @@
     </button>
 
     <!-- LOGO -->
+    <!-- Ocultar logo al desplegar -->
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        var toggler = document.getElementById('desplegable');
+        var logo = document.getElementById('logo');
+
+        toggler.addEventListener('click', function() {
+          if (logo.style.display !== 'none') {
+            logo.style.display = 'none';
+          } else {
+            logo.style.display = 'block';
+          }
+        });
+      });
+    </script>
     <div>
       <img id="logo" src="./Vista/Recursos/Logo2.png" alt="Logo-SocialHope" />
     </div>
