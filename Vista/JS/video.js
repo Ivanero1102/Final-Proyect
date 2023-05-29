@@ -11,12 +11,13 @@ function onYouTubeIframeAPIReady() {
     //         },
     //     });
     // });
-
+    // Hm5d0DcjFCo
     obtenerVideoAleatorio(function(videoId) {
     var ifrm = document.createElement("iframe");
-        ifrm.setAttribute("src", "https://www.youtube.com/embed/"+videoId+"?enablejsapi=1&controls=0&playinfo=0&disablekb=1");
+        ifrm.setAttribute("src", "https://www.youtube.com/embed/"+videoId+"?enablejsapi=1&controls=0&playinfo=0&disablekb=1&autoplay=1&showinfo=0");
         ifrm.style.width = "640px";
         ifrm.style.height = "480px";
+        ifrm.setAttribute("id", "iframeYoutube");
         document.body.appendChild(ifrm);
     });
 }
@@ -28,7 +29,7 @@ function obtenerVideoAleatorio(callback) {
         dataType: "json",
         type: "GET",
         data: {
-            key: "AIzaSyAl3UJSwRRoXJzC9tAFYE47LK6BeDhG4Wc", // Reemplazar con tu propia API Key de YouTube
+            key: "AIzaSyBsfzR2BC71MsFPy44dXRIPpYTSJYMBWwI", // Reemplazar con tu propia API Key de YouTube
             q: "", // Puedes especificar términos de búsqueda si lo deseas
             type: "video",
             videoEmbeddable: true,

@@ -44,9 +44,9 @@
         // </script>';
     }
 ?>
-<iframe src="https://www.youtube.com/embed/VIDEO_ID" sandbox="allow-same-origin"></iframe>
+<!-- <iframe src="https://www.youtube.com/embed/VIDEO_ID" sandbox="allow-same-origin"></iframe> -->
 <?php require 'footer.html'; ?>
-<script src="./Vista/JS/video.js" defer></script>
+<!-- <script src="./Vista/JS/video.js" defer></script> -->
 </body>
 </html>
 
