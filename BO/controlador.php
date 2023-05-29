@@ -12,26 +12,34 @@ $punto = new OperativaPunto();
 $usuario = new OperativaUsuaio();
 
 if(isset($_POST['Logout'])){
+    // EXTRAÑO: al meter este require de alerta ya al cerrar sesión no da error ??
+    require './Vista/HTML/Alertas/alertaCerrarSesion.html'; 
     $usuario->logout();
 }
 
 if(isset($_POST['Login'])){
     $usuarioObjeto = $usuario->creacionLogin($_POST['email'], $_POST['contrasena']);
-    $usuario->login($usuarioObjeto);
+    if ($usuario->login($usuarioObjeto)) {
+        require './Vista/HTML/Alertas/alertaLoginCorrecto.html'; 
+    } else {
+        require './Vista/HTML/Alertas/alertaLoginFallido.html'; 
+    }
 }
 
 if(isset($_POST['Registro'])){
     $usuarioObjeto = $usuario->creacion($_POST['nombre'], $_POST['apellido'], $_POST['edad'],$_POST['email'] ,$_POST['contrasena']);
-    $usuario->registro($usuarioObjeto);
+    if ($usuario->registro($usuarioObjeto)) {
+        require './Vista/HTML/Alertas/alertaRegistroCorrecto.html'; 
+    } else {
+        require './Vista/HTML/Alertas/alertaRegistroFallido.html'; 
+    }
 }
 
 if (isset($_SESSION['usuario'])) {
     $correo = $_SESSION['usuario'];
     $usuarioBBDD = $usuario->sacarUsuario($correo);
     $usuarioObjeto = $usuario->creacion($usuarioBBDD['nombre_usuario'], $usuarioBBDD['apellidos_usuario'], $usuarioBBDD['edad_usuario'],$usuarioBBDD['correo_usuario'],$usuarioBBDD['contrasena_usuario'],$usuarioBBDD['puntos_usuario'],$usuarioBBDD['id_usuario']);
-    // echo $usuarioObjeto->__get('puntosUsuario');
     $ongBBDD = $ong->sacarTodasOng();
-    // print_r($ongBBDD);
 
     if(isset($_POST['Donar'])){
         if ($usuarioObjeto->__get('puntosUsuario') >= $_POST['puntos']) {
@@ -43,10 +51,12 @@ if (isset($_SESSION['usuario'])) {
             $correoUsuario = $usuarioObjeto->__get('correoUsuario');
             $puntoObjeto = $punto->creacion($idOng, $correoUsuario, $_POST['puntos']);
             $punto->donacion($puntoObjeto);
+            // REVISAR ALERTA CON HEADER GET -> DONAR PUNTOS
+            // require './Vista/HTML/Alertas/alertaDonarCorrecto.html';
             header('Location: http://localhost/Final-Proyect/ongs');
             die();
         }else{
-            // echo '<script defer> alert("hola"); </scrip>';
+            require './Vista/HTML/Alertas/alertaDonarFallido.html'; 
         }
     }
 }   
