@@ -1,69 +1,56 @@
-var player;
-
-function onYouTubeIframeAPIReady() {
-    // Obtener un video aleatorio de 30 segundos de duración
-    // obtenerVideoAleatorio(function(videoId) {
-    //     player = new YT.Player("video-container", {
-    //         videoId: videoId,
-    //         playerVars: { "controls": 0 },
-    //         events: {
-    //             onStateChange: onPlayerStateChange
-    //         },
-    //     });
-    // });
-    // Hm5d0DcjFCo
-    obtenerVideoAleatorio(function(videoId) {
-    var ifrm = document.createElement("iframe");
-        ifrm.setAttribute("src", "https://www.youtube.com/embed/"+videoId+"?enablejsapi=1&controls=0&playinfo=0&disablekb=1&autoplay=1&showinfo=0");
-        ifrm.style.width = "640px";
-        ifrm.style.height = "480px";
-        ifrm.setAttribute("id", "iframeYoutube");
-        document.body.appendChild(ifrm);
+// Configura la API de YouTube
+function init() {
+    gapi.client.setApiKey('AIzaSyBsfzR2BC71MsFPy44dXRIPpYTSJYMBWwI');
+    gapi.client.load('youtube', 'v3', function() {
+      // API de YouTube cargada y lista para usar
+      searchRandomVideo();
     });
-}
-
-function obtenerVideoAleatorio(callback) {
-    // Hacer una solicitud AJAX a la API de YouTube para buscar videos aleatorios
-    $.ajax({
-        url: "https://www.googleapis.com/youtube/v3/search",
-        dataType: "json",
-        type: "GET",
-        data: {
-            key: "AIzaSyBsfzR2BC71MsFPy44dXRIPpYTSJYMBWwI", // Reemplazar con tu propia API Key de YouTube
-            q: "", // Puedes especificar términos de búsqueda si lo deseas
-            type: "video",
-            videoEmbeddable: true,
-            maxResults: 1, // Obtener hasta 10 resultados
-            order: "date", // Ordenar los resultados aleatoriamente
-        },
-        success: function(data) {
-            // Obtener el ID de un video aleatorio de los resultados de búsqueda
-            var videoId = data.items[0].id.videoId;
-            callback(videoId);
-        },
-        error: function(xhr, textStatus, errorThrown) {
-            console.log("Error al obtener video aleatorio: " + textStatus);
-        }
+  }
+  
+  // Busca un video aleatorio utilizando la API de YouTube
+  function searchRandomVideo() {
+    var query = 'tu consulta de búsqueda'; // Personaliza la consulta de búsqueda según tus preferencias
+    var request = gapi.client.youtube.search.list({
+      part: 'snippet',
+      type: 'video',
+      maxResults: 50, // Aumenta el número de resultados si deseas más opciones aleatorias
+      order: 'date',
+      q: query
     });
-}
+  
+    request.execute(function(response) {
+      var items = response.items;
+      var randomIndex = Math.floor(Math.random() * items.length);
+      var videoId = items[randomIndex].id.videoId;
+      playVideo(videoId);
+    });
 
-function onPlayerStateChange(event) {
-    if (event.data === YT.PlayerState.ENDED) {
+
+    setTimeout( function(){
         // Se establece una cookie para indicar que el video ha sido completado
-        document.cookie = "video_completed=true; expires=Thu, 01 Jan 2030 00:00:00 UTC; path=/";
-        document.getElementById("recompensa-boton").style.display = "block"; // Mostrar el botón de reclamar recompensa
+        let d = new Date();
+        d.setMinutes(d.getMinutes()+15);
+        document.cookie = "video_completed=true; expires="+d+"; path=/";
+        document.cookie = "comprobante=true; expires="+d+"; path=/";
+        document.getElementById("boton-ver-video").disabled = true; // Mostrar el botón de reclamar recompensa
         setTimeout(function() {
             location.reload(); // Recargar la página después de un breve retraso
         }, 2000); // Cambiar el valor 2000 a la cantidad de milisegundos que desees esperar antes de recargar la página (2 segundos en este ejemplo)
-    }
-}
+    }, 30000);
+  }
 
-function completarVideo() {
-    // Realizar las acciones necesarias para otorgar la recompensa
-    // ...
-    // Redirigir o mostrar mensaje de éxito
-}
-
-function IVAN() {
-    
-}
+function playVideo(videoId) {
+    var player = new YT.Player('player', {
+      height: '360',
+      width: '640',
+      videoId: videoId,
+      playerVars: {
+        disablekb: 1
+      },
+      events: {
+        'onReady': function(event) {
+          event.target.playVideo();
+        }
+      }
+    });
+  }

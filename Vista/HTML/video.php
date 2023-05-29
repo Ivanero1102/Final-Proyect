@@ -26,7 +26,12 @@
         // Mostrar la recompensa al usuario
         echo '
         <div class="container-fluid d-flex flex-column" id="main">
-            <span id="titulo" class="text-center">¡Felicidades! Has completado el video.</span>
+            <span id="titulo" class="text-center">GANA PUNTOS MIRANDO ESTE VIDEO</span>
+            <div class="embed-responsive embed-responsive-16by9 d-flex align-items-center justify-content-center" id="video-container">        
+                <div>
+                    <button id="boton-ver-video" class="button" disabled>Ver Vídeo</button>
+                </div>
+            </div>
         </div>';
     } else {
         // Mostrar el video de YouTube
@@ -37,7 +42,7 @@
             <span id="titulo" class="text-center">GANA PUNTOS MIRANDO ESTE VIDEO</span>
             <div class="embed-responsive embed-responsive-16by9 d-flex align-items-center justify-content-center" id="video-container">        
                 <div>
-                    <button id="boton-ver-video" class="button" onclick="IVAN()">Ver Vídeo</button>
+                    <button id="boton-ver-video" class="button" onclick="init()">Ver Vídeo</button>
                 </div>
             </div>
         </div>';
@@ -47,9 +52,12 @@
         // </script>';
     }
 ?>
+ <div id="player"></div>
+
+<script src="https://apis.google.com/js/client.js?onload=init"></script>
 <!-- <iframe src="https://www.youtube.com/embed/VIDEO_ID" sandbox="allow-same-origin"></iframe> -->
 <?php require 'footer.html'; ?>
-<!-- <script src="./Vista/JS/video.js" defer></script> -->
+<script src="./Vista/JS/video.js" defer></script>
 </body>
 </html>
 
