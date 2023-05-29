@@ -19,10 +19,10 @@
     }
 
     // Verificar si el usuario ha completado el video
-    $videoCompleted = isset($_COOKIE['video_completed']) && $_COOKIE['video_completed'] === 'true';
+    // $videoCompleted = isset($_COOKIE['video_completed']) && $_COOKIE['video_completed'] === 'true';
 
     // Comprobar si el video ha sido completado para mostrar la recompensa o el video
-    if ($videoCompleted) {
+    if (isset($_COOKIE['video_completed']) && $_COOKIE['video_completed'] === 'true') {
         // Mostrar la recompensa al usuario
         echo '
         <div class="container-fluid d-flex flex-column" id="main">

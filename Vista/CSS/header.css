@@ -1,5 +1,6 @@
 /**************************************** HEADER ****************************************/
 nav {
+    /* background: linear-gradient(90deg, rgb(0, 0, 0) 25%, rgb(120, 221, 166) 150%); */
     background: linear-gradient(90deg, rgb(0, 0, 0) -7%, rgb(120, 221, 166) 105%);
     box-shadow: rgba(30, 192, 118, 0.4) 0px 30px 60px -30px, rgba(30, 192, 118, 0.45) 0px -2px 6px 0px inset;
 }
@@ -89,6 +90,9 @@ nav {
         border-radius: 2vw;
         padding: 10px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+    nav,.navbar{
+        background: linear-gradient(90deg, rgb(0, 0, 0) 25%, rgb(120, 221, 166) 150%);
     }
     .nav-item {
         background-color: #1ec076;

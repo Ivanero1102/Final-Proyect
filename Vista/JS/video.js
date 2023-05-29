@@ -32,7 +32,7 @@ function init() {
     setTimeout( function(){
         // Se establece una cookie para indicar que el video ha sido completado
         let d = new Date();
-        d.setMinutes(d.getMinutes()+15);
+        d.setMinutes(d.getMinutes() +d.getTimezoneOffset()+1);
         document.cookie = "video_completed=true; expires="+d+"; path=/";
         document.cookie = "comprobante=true; expires="+d+"; path=/";
         document.getElementById("boton-ver-video").disabled = true; // Mostrar el botón de reclamar recompensa

@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0);
 try{
     include_once('./DAO/operativaOng.php');
     include_once('./DAO/operativaPunto.php');
