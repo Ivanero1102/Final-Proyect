@@ -39,6 +39,12 @@ if (isset($_SESSION['usuario'])) {
         case 'Página principal':
             include './Vista/HTML/' . $rutas[$request][1];
             break;
+        case 'Ong':
+            header('Location: http://localhost/Final-Proyect/');
+            break;
+        case 'Video':
+            header('Location: http://localhost/Final-Proyect/');
+            break;
         default:
             http_response_code(404);
             include './Vista/HTML/404.php';

@@ -15,7 +15,6 @@ if(isset($_POST['Logout'])){
     // EXTRAÑO: al meter este require de alerta ya al cerrar sesión no da error ??
     require './Vista/HTML/Alertas/alertaCerrarSesion.html'; 
     $usuario->logout();
-    header('Location: http://localhost/Final-Proyect/');
 }
 
 if(isset($_POST['Login'])){
