@@ -1,5 +1,8 @@
 // Configura la API de YouTube
 function init() {
+    var boton = document.getElementById("boton-ver-video");
+    boton.style.display = "none";
+    
     gapi.client.setApiKey('AIzaSyBsfzR2BC71MsFPy44dXRIPpYTSJYMBWwI');
     gapi.client.load('youtube', 'v3', function() {
       // API de YouTube cargada y lista para usar

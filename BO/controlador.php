@@ -68,7 +68,7 @@ if(isset($_GET['alerta'])){
 if(isset($_COOKIE['comprobante']) && $_COOKIE['video_completed'] === 'true'){
     $usuarioObjeto->__get('puntosUsuario');
     $usuario->sumaPuntos($usuarioObjeto, 25);
-    require './Vista/HTML/Alertas/alertaDonarCorrecto.html'; 
+    require './Vista/HTML/Alertas/alertaPuntosCorrecto.html'; 
     setcookie('comprobante',"",time()-1, '/');
 }
 

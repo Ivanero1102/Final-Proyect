@@ -32,7 +32,7 @@
                     <img class="d-block" src="./Vista/Recursos/Imagenes/ac2.png" alt="Imagen 1" id="acnur">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>PUNTOS TOTALES OBTENIDOS: <?php echo $ongBBDD["acnur"]??"####" ?></h5>
+                    <h5>PUNTOS TOTALES RECIBIDOS: <?php echo $ongBBDD["acnur"]??"####" ?></h5>
                     <a href="https://eacnur.org/es" target="_blank">
                         <button>Visitar su web</button>
                     </a>
@@ -44,7 +44,7 @@
                     <img class="d-block" src="./Vista/Recursos/Imagenes/aea2.png" alt="Imagen 2" id="ayuda-en-accion">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>PUNTOS TOTALES OBTENIDOS: <?php echo $ongBBDD["ayudaEnAccion"]??"####" ?></h5>
+                    <h5>PUNTOS TOTALES RECIBIDOS: <?php echo $ongBBDD["ayudaEnAccion"]??"####" ?></h5>
                     <a href="https://ayudaenaccion.org/" target="_blank">
                         <button>Visitar su web</button>
                     </a>
@@ -56,7 +56,7 @@
                     <img class="d-block" src="./Vista/Recursos/Imagenes/as2.png" alt="Imagen 3" id="accion-solidaria">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>PUNTOS TOTALES OBTENIDOS: <?php echo $ongBBDD["accionSolidaria"]??"####" ?></h5>
+                    <h5>PUNTOS TOTALES RECIBIDOS: <?php echo $ongBBDD["accionSolidaria"]??"####" ?></h5>
                     <a href="https://accionsolidaria.info/" target="_blank">
                         <button>Visitar su web</button>
                     </a>
@@ -68,7 +68,7 @@
                     <img class="d-block" src="./Vista/Recursos/Imagenes/mf2.png" alt="Imagen 4" id="medicos-sin-fronteras">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>PUNTOS TOTALES OBTENIDOS: <?php echo $ongBBDD["medicosSinFronteras"]??"####" ?></h5>
+                    <h5>PUNTOS TOTALES RECIBIDOS: <?php echo $ongBBDD["medicosSinFronteras"]??"####" ?></h5>
                     <a href="https://www.msf.es/" target="_blank">
                         <button>Visitar su web</button>
                     </a>
@@ -81,7 +81,7 @@
                 </div>
                 <div class="carousel-caption d-none d-md-block">
                    
-                    <h5>PUNTOS TOTALES OBTENIDOS: <?php echo $ongBBDD["unicef"]??"####" ?></h5>
+                    <h5>PUNTOS TOTALES RECIBIDOS: <?php echo $ongBBDD["unicef"]??"####" ?></h5>
                     <a href="https://www.unicef.es/" target="_blank">
                         <button>Visitar su web</button>
                     </a>

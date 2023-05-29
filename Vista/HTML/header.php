@@ -81,13 +81,13 @@
             <h2>REGISTRO</h2>
             <form action="" method="post">
               <label for="nombre">Nombre</label><br>
-              <input type="text" id="nombre" name="nombre" required><br>
+              <input type="text" id="nombre" name="nombre" max="50" pattern="[A-Za-z]+" required><br>
               <label for="apellido">Apellido</label><br>
-              <input type="text" id="apellido" name="apellido" required><br>
+              <input type="text" id="apellido" name="apellido" max="50" pattern="[A-Za-z]+" required><br>
               <label for="edad">Edad</label><br>
               <input type="number" id="edad" name="edad" min="18" max="115" step="1" required><br>
               <label for="email">Email</label><br> 
-              <input type="email" id="email" name="email" required><br>
+              <input type="email" id="email" name="email" max="30" pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}" required><br>
               <label for="contrasena">Contraseña</label><br>
               <input type="password" id="contrasena" name="contrasena" required><br>
               <input type="submit" value="Registrarse" name="Registro">
