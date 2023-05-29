@@ -171,7 +171,7 @@ class OperativaUsuaio{
     public function restaPuntos($usuario, $restaPuntos) { // DONANDO PUNTOS (+puntosGastados, -puntosActuales)
 
         // Actualización de los puntos en el objeto $punto
-        if ($usuario->__get('puntosUsuario') >= $restaPuntos) { // Si tiene los puntos suficientes...
+         // Si tiene los puntos suficientes...
             $puntosU = $usuario->__get('puntosUsuario');
             $puntos = $puntosU - $restaPuntos;
             $usuario->__set('puntosUsuario', $puntos);
@@ -181,10 +181,6 @@ class OperativaUsuaio{
             $puntosUser = $usuario->__get('puntosUsuario');
             $correoUser = $usuario->__get('correoUsuario');
             $conn = (new CRUD())->consultaPreparada($sql, array(':puntos_usuario' => $puntosUser, ':correo_usuario' => $correoUser));
-            return true;
-        } else {
-            return false;
-        }
     }
 }
 
