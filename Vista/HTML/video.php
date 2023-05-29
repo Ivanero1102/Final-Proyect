@@ -24,20 +24,23 @@
     // Comprobar si el video ha sido completado para mostrar la recompensa o el video
     if ($videoCompleted) {
         // Mostrar la recompensa al usuario
-        echo '<div class="container-fluid d-flex flex-column" id="main">';
-        echo '<span id="titulo" class="text-center">¡Felicidades! Has completado el video.</span>';
-        echo '<p>Aquí va tu recompensa.</p>';
-        // ...
-        echo '</div>';
+        echo '
+        <div class="container-fluid d-flex flex-column" id="main">
+            <span id="titulo" class="text-center">¡Felicidades! Has completado el video.</span>
+        </div>';
     } else {
         // Mostrar el video de YouTube
-        echo '<div class="container-fluid d-flex flex-column" id="main">';
-        echo '<span id="titulo" class="text-center">GANA PUNTOS MIRANDO ESTE VIDEO</span>';
-        echo '<div class="embed-responsive embed-responsive-16by9 d-flex align-items-center justify-content-center" id="video-container">';
         // echo '<iframe src="https://www.youtube.com/embed/VIDEO_ID" sandbox="allow-same-origin"></iframe>';
-        echo '</div>';
-        echo '<button id="recompensa-boton" onclick="completarVideo()">Reclamar recompensa</button>';
-        echo '</div>';
+        // <button id="recompensa-boton" onclick="completarVideo()">Reclamar recompensa</button>
+        echo '
+        <div class="container-fluid d-flex flex-column" id="main">
+            <span id="titulo" class="text-center">GANA PUNTOS MIRANDO ESTE VIDEO</span>
+            <div class="embed-responsive embed-responsive-16by9 d-flex align-items-center justify-content-center" id="video-container">        
+                <div>
+                    <button id="boton-ver-video" class="button" onclick="IVAN()">Ver Vídeo</button>
+                </div>
+            </div>
+        </div>';
 
         // JavaScript para controlar la API de YouTube, la finalización del video y la obtención de un video aleatorio
         // echo '<script>
