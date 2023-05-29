@@ -26,18 +26,18 @@
 }
 
 #popup-contenido-donacion{
-    width: 25%;
+    width: 2512%;
 }
 
 .cerrar {
     color: #aaa;
-    float: right;
-    font-size: 3vw;
+    /* float: right; */
+    position: absolute;
+    top: -10px;
+    right: 3px;
+    font-size: 30px;
     font-weight: bold;
     cursor: pointer;
-    line-height: 1vw;
-    margin-top: 0.5vw;
-    margin-right: 0.2vw;
 }
 
 .cerrar:hover {
@@ -138,11 +138,6 @@
         margin-top: 5vw;
         margin-bottom: 5vw;
     }
-    .cerrar {
-        font-size: 6vw;
-        margin-top: 0.8vw;
-        margin-right: 0.5vw;
-    }
 }
 
 /* Dispositivos móviles */
@@ -161,10 +156,6 @@
         height: 0.8vw;
         margin-top: 5vw;
         margin-bottom: 5vw;
-    }
-    .cerrar {
-        margin-top: 1.4vw;
-        font-size: 7vw;
     }
 }
 /***********************************************************************************************/

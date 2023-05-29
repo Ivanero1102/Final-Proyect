@@ -34,29 +34,27 @@
           }
         ?>
       </ul>
-    </div>
-    
-    <div class="d-flex align-items-center">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <!-- Botón Acceder si no está logeado -->
-          <?php
-            if (!isset($_SESSION['usuario'])) echo '<button id="boton-acceder" class="nav-link text-nowrap">Acceder</button>';
-            else {
-              echo
-              '<div class="d-flex align-items-center justify-content-end">'.
-                '<span id="puntos-usuario">'.$usuarioObjeto->__get('puntosUsuario').' SH</span>'.
-                '<img id="gif-puntos" src="./Vista/Recursos/Imagenes/puntos.gif" alt="Logo-SocialHope"/>'.
-                '<form action="" method="post">
-                  <input type="submit" value="Cerrar Sesión" id="boton-cerrar-sesion" name="Logout" class="nav-link text-nowrap">
-                </form>'.
-              '</div>'
-              ;
-            }
-          ?>
-        
-        </li>
-      </ul>
+      
+      <!-- Botón Acceder si no está logeado -->
+      <?php
+        if (!isset($_SESSION['usuario'])) {
+          echo '
+          <div id="contenedor-boton-acceder">
+            <button id="boton-acceder" class="nav-link text-nowrap">Acceder</button>
+          </div>';
+        } else {
+          echo '
+          <div id="contenedor-puntos-form">
+            <div id="contenedor-puntos-gif">
+              <span id="puntos-usuario">'.$usuarioObjeto->__get('puntosUsuario').' SH</span>
+              <img id="gif-puntos" src="./Vista/Recursos/Imagenes/puntos.gif" alt="Logo-SocialHope"/>
+            </div>
+            <form action="" method="post">
+              <input type="submit" value="Cerrar Sesión" id="boton-cerrar-sesion" name="Logout" class="nav-link text-nowrap">
+            </form>
+          </div>';
+        }
+      ?>
     </div>
     
     
