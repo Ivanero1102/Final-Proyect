@@ -7,8 +7,8 @@ class OperativaPunto {
     /**
      * Saca los datos de punto seleccionado de la BBDD
      * 
-     * @param string $idUsuario | Id del usuario
-     * @return mixed  $crud->consultaPreparada("SELECT * FROM PUNTOS WHERE id_usuario = :id_usuario", array(':id_usuario' => $idUsuario)); | Array con los datos de la BBDD
+     * @param integer $correoUsuario | Correo del usuario
+     * @return mixed  $crud->consultaPreparada("SELECT * FROM PUNTOS WHERE correo_usuario = :correo_usuario", array(':correo_usuario' => $correoUsuario)); | Array con los datos de la BBDD
      * 
      */
     public function sacarPuntos($correoUsuario)
@@ -18,13 +18,13 @@ class OperativaPunto {
     }
 
     /**
-     * Saca los datos del usuario seleccionado de la BBDD
+     * Crea un objeto de tipo punto
      * 
-     * @param string $idUsuario | Id del usuario
-     * @param string $idUsuario | Id de la ong
-     * @param string $puntosGastados | Correo del usuario
-     * @param string $contrasenaUsuario | Contraseña del usuario
-     * @return mixed $objetoUsuario | Objeto de tipo usuario
+     * @param integer $idOng | Id de la ong
+     * @param string $correoUsuario | Correo del usuario
+     * @param integer $puntosGastados | Correo del usuario
+     * @param integer $idPunto | Puntos gastados, por defecto vale 0
+     * @return object $objetoPunto | Objeto de tipo punto, por defecto vale null
      * 
      */
     public function creacion($idOng ,$correoUsuario ,$puntosGastados = 0, $idPunto = null){
@@ -36,6 +36,12 @@ class OperativaPunto {
         return $objetoPunto;
     }
 
+    /**
+     * Realiza un registro en la BBDD de la donacion realizada, en la tabla puntos
+     * 
+     * @param object $punto | Objeto de tipo punto
+     * 
+     */
     public function donacion($punto){
         try {
             $idOng = $punto->__get('idOng');

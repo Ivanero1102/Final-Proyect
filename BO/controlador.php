@@ -52,8 +52,6 @@ if (isset($_SESSION['usuario'])) {
             $correoUsuario = $usuarioObjeto->__get('correoUsuario');
             $puntoObjeto = $punto->creacion($idOng, $correoUsuario, $_POST['puntos']);
             $punto->donacion($puntoObjeto);
-            // REVISAR ALERTA CON HEADER GET -> DONAR PUNTOS
-            // require './Vista/HTML/Alertas/alertaDonarCorrecto.html';
             header('Location: http://localhost/Final-Proyect/ongs?alerta=true');
             die();
         }else{

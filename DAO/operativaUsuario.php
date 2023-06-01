@@ -22,12 +22,12 @@ class OperativaUsuaio{
      * 
      * @param string $nombreUsuario | Nombre del usuario
      * @param string $apellidosUsuario | Apellido del usuario
-     * @param string $edadUsuario | Edad del usuario
+     * @param integer $edadUsuario | Edad del usuario
      * @param string $correoUsuario | Correo del usuario
      * @param string $contrasenaUsuario | Contraseña del usuario
-     * @param string $puntosGastados | Puntos del usuario, por defecto es 0
-     * @param string $idUsuario | Id del usuario, por defecto es null
-     * @return mixed $objetoUsuario | Objeto de tipo usuario
+     * @param integer $puntosGastados | Puntos del usuario, por defecto es 0
+     * @param integer $idUsuario | Id del usuario, por defecto es null
+     * @return object $objetoUsuario | Objeto de tipo usuario
      * 
      */
     public function creacion($nombreUsuario, $apellidosUsuario, $edadUsuario, $correoUsuario, $contrasenaUsuario, $puntosUsuario = 0, $idUsuario = null)
@@ -48,7 +48,7 @@ class OperativaUsuaio{
      * 
      * @param string $correoUsuario | Correo del usuario
      * @param string $contrasenaUsuario | Contraseña del usuario
-     * @return mixed $objetoUsuario | Objeto de tipo usuario
+     * @return object $objetoUsuario | Objeto de tipo usuario
      * 
      */
     public function creacionLogin($correoUsuario, $contrasenaUsuario)
@@ -59,8 +59,6 @@ class OperativaUsuaio{
         return $objetoUsuario;
     }
 
-    /* La funcion recibe un objeto de tipo usuario, con todos los datos que posee un usuario, y se encarga de introducirlo en la base de datos*/
-    /*La funcion no devuelve un mensaje en caso de que todo haya funcionado y un mensaje de error en caso contrario*/
     /**
      * Se encarga de introducir un usuario en la base de datos
      * 
@@ -150,15 +148,17 @@ class OperativaUsuaio{
         }
     }
 
-
-    public function sumaPuntos($usuario, $sumaPuntos) { // MIRANDO VIDEOS (+puntosActuales, +totalPuntos)
-
-        // Actualización de los puntos en el objeto $punto
+    /**
+     * Suma puntos al usuario
+     * 
+     * @param object $usuario | Objeto de tipo usuario
+     * @param integer $sumaPuntos | Numero empleado para sumarle puntos al usuario
+     * 
+     */
+    public function sumaPuntos($usuario, $sumaPuntos) {
         $puntosU = $usuario->__get('puntosUsuario');
         $puntos = $puntosU + $sumaPuntos;
         $usuario->__set('puntosUsuario',$puntos);
-
-        // Actualización de puntos en la base de datos
         $sql = "UPDATE usuarios SET puntos_usuario = :puntos_usuario WHERE correo_usuario = :correo_usuario";
         $puntosUser = $usuario->__get('puntosUsuario');
         $correoUser = $usuario->__get('correoUsuario');
@@ -166,17 +166,17 @@ class OperativaUsuaio{
         return true;
     }
 
-    /* La funcion recibe un objeto de tipo punto con los puntos que se van a restar, ejecuta la resta de los puntos y actualiza la BBDD */
-    /* La funcion no devuelve un mensaje en caso de que todo haya funcionado y un mensaje de error en caso contrario */
-    public function restaPuntos($usuario, $restaPuntos) { // DONANDO PUNTOS (+puntosGastados, -puntosActuales)
-
-        // Actualización de los puntos en el objeto $punto
-         // Si tiene los puntos suficientes...
+     /**
+     * Resta puntos al usuario
+     * 
+     * @param object $usuario | Objeto de tipo usuario
+     * @param integer $restaPuntos | Numero empleado para quitarle puntos al usuario
+     * 
+     */
+    public function restaPuntos($usuario, $restaPuntos) {
             $puntosU = $usuario->__get('puntosUsuario');
             $puntos = $puntosU - $restaPuntos;
             $usuario->__set('puntosUsuario', $puntos);
-
-            // Actualización de puntos en la base de datos
             $sql = "UPDATE usuarios SET puntos_usuario = :puntos_usuario WHERE correo_usuario = :correo_usuario";
             $puntosUser = $usuario->__get('puntosUsuario');
             $correoUser = $usuario->__get('correoUsuario');
